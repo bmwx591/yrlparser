@@ -16,8 +16,6 @@ class YRL {
 
     protected $path;
 
-    protected $offers = [];
-
     public function __construct()
     {
         $this->XMLReader = new \XMLReader();
@@ -28,7 +26,15 @@ class YRL {
      */
     public function getOffers()
     {
-        return $this->offers;
+        $this->open();
+        while ($this->read()) {
+            if ($this->path == 'realty-feed/offer') {
+                yield $this->parseOffer();
+            } elseif ($this->path == 'realty-feed') {
+                break;
+            }
+        }
+        $this->close();
     }
 
     /**
@@ -51,14 +57,9 @@ class YRL {
         $this->open();
         while ($this->read()) {
             if ('realty-feed' == $this->path) {
-                $this->reed();
+                $this->read();
                 if ('realty-feed/generation-date' == $this->path) {
                     $this->date = new \DateTime($this->XMLReader->value);
-                    while ($this->read()) {
-                        if ('realty-feed/offer' == $this->path) {
-                            $this->offers[] = $this->parseOffer();
-                        }
-                    }
                     break;
                 }
             }
@@ -113,18 +114,9 @@ class YRL {
 
     protected function parseOffer()
     {
-        $xml = $this->XMLReader;
-        $offer = new Offer();
-
-        $attributes = $this->parseAttributes();
-        while ($this->read()) {
-            if ($xml->nodeType == \XMLReader::ELEMENT) {
-                $nodes = $this->parseNode($this->path);
-            } elseif ('realty-feed' == $this->path) {
-                break;
-            }
-        }
-        $offer->setOffer(['name' => 'offer', 'attributes' => $attributes, 'value' => null, 'nodes' => $nodes]);
+        $offerNode = $this->parseNode('realty-feed/offer');
+        $offer = new BaseOffer();
+        $offer->setOffer($offerNode);
         return $offer;
     }
 

@@ -1,11 +1,14 @@
 {
   "name": "bmwx591/yrlparser",
   "description": "Parse Yandex Realty Language files",
+  "version" : "1.0",
   "keywords": [
+    "php",
+    "parser",
     "YRL",
-    "parser"
+    "yandex"
   ],
-  "type" : "project",
+  "type" : "library",
   "license": "MIT",
   "minimum-stability": "stable",
   "authors": [
