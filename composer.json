@@ -1,0 +1,25 @@
+{
+  "name": "bmwx591/yrlparser",
+  "description": "Parse Yandex Realty Language files",
+  "keywords": [
+    "YRL",
+    "parser"
+  ],
+  "type" : "project",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Ivan Aslanov",
+      "email": "bmw_x591@mail.ru"
+    }
+  ],
+  "require-dev" : {
+    "codeception/codeception" : "^2.2"
+  },
+  "autoload" : {
+    "psr-4": {
+      "bmwx591\\yrl\\": ""
+    }
+  }
+}
