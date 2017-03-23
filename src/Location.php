@@ -9,7 +9,7 @@
 namespace bmwx591\yrl;
 
 
-class Location
+class Location extends Object
 {
     protected $country;
 
@@ -225,5 +225,13 @@ class Location
     public function setMetro($metro)
     {
         $this->metro = $metro;
+    }
+
+    public function setAttribute(array $attrNode)
+    {
+        if ('metro' == $attrNode['name']) {
+            $this->metro = $this->setMetro((new Metro())->setOptions($attrNode));
+        }
+        return $this;
     }
 }

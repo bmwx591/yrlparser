@@ -2,7 +2,7 @@
 
 namespace bmwx591\yrl;
 
-class Metro
+class Metro extends Object
 {
     protected $name;
 
@@ -56,5 +56,10 @@ class Metro
     public function setTimeOnFoot($timeOnFoot)
     {
         $this->timeOnFoot = $timeOnFoot;
+    }
+
+    public function setAttribute(array $attrNode)
+    {
+
     }
 }

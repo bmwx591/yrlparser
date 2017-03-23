@@ -28,9 +28,9 @@ class YRL {
     {
         $this->open();
         while ($this->read()) {
-            if ($this->path == 'realty-feed/offer') {
+            if ('realty-feed/offer' == $this->path) {
                 yield $this->parseOffer();
-            } elseif ($this->path == 'realty-feed') {
+            } elseif ('realty-feed' == $this->path) {
                 break;
             }
         }
@@ -115,8 +115,7 @@ class YRL {
     protected function parseOffer()
     {
         $offerNode = $this->parseNode('realty-feed/offer');
-        $offer = new BaseOffer();
-        $offer->setOffer($offerNode);
+        $offer = $this->createOffer($offerNode['category'])->setOptions($offerNode);
         return $offer;
     }
 
@@ -161,5 +160,27 @@ class YRL {
             }
         }
         return $attributes;
+    }
+
+    /**
+     * @param string $type
+     * @return BaseOffer|CommercialOffer|NewBuildingOffer
+     */
+    protected function createOffer($type)
+    {
+        switch ($type) {
+            case 'дом' :
+            case 'house' :
+            case 'квартира' :
+            case 'flat' :
+            case 'таунхаус' :
+            case 'townhouse' :
+                return new NewBuildingOffer();
+            case 'коммерческая' :
+            case 'commercial' :
+                return new CommercialOffer();
+            default :
+                return new BaseOffer();
+        }
     }
 }

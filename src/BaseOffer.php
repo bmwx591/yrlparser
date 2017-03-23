@@ -1,147 +1,68 @@
 <?php
 
+
 namespace bmwx591\yrl;
 
-class BaseOffer
+
+class BaseOffer extends Offer
 {
-    use TYRL;
-
-    protected $internalId;
-
-    protected $type;
 
     protected $propertyType;
 
-    protected $category;
+    protected $roomSpace;
 
-    protected $commercialType;
+    protected $livingSpace;
 
-    protected $commercialBuildingType;
+    protected $kitchenSpace;
 
-    protected $purpose;
+    protected $newFlat;
 
-    protected $purposeWarehouse;
+    protected $apartments;
 
-    protected $lotNumber;
+    protected $studio;
 
-    protected $cadastralNumber;
+    protected $openPlan;
 
-    protected $url;
+    protected $roomsType;
 
-    protected $creationDate;
+    protected $balcony;
 
-    protected $lastUpdateDate;
+    protected $bathroomUnit;
 
-    protected $expireDate;
+    protected $kitchenFurniture;
 
-    protected $payedAdv;
+    protected $television;
 
-    protected $manuallyAdded;
+    protected $washingMachine;
 
-    protected $vas;
+    protected $dishwasher;
 
-    protected $location;
+    protected $refrigerator;
 
-    protected $images = [];
+    protected $builtInTech;
 
-    protected $salesAgent;
+    protected $yandexBuildingId;
 
-    /**
-     * @return mixed
-     */
-    public function getSalesAgent()
-    {
-        return $this->salesAgent;
-    }
+    protected $buildingType;
 
-    /**
-     * @param mixed $salesAgent
-     */
-    public function setSalesAgent($salesAgent)
-    {
-        $this->salesAgent = $salesAgent;
-    }
+    protected $buildingSeries;
+
+    protected $buildingPhase;
+
+    protected $buildingSection;
+
+    protected $readyQuarter;
+
+    protected $buildingState;
+
+    protected $rubbishChute;
 
     /**
      * @return string
      */
-    public function getCategory()
+    public function getPropertyType()
     {
-        return $this->category;
-    }
-
-    /**
-     * @param string $category
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     * @return $this
-     */
-    public function setInternalId($value)
-    {
-        $this->internalId = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInternalId()
-    {
-        return $this->internalId;
-    }
-
-    /**
-     * @param array $value
-     * @return $this
-     */
-    public function setImages(array $value)
-    {
-        $this->images = $value;
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     * @return $this
-     */
-    public function addImage($value)
-    {
-        array_push($this->images, $value);
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-
-    /**
-     * @param string $value
-     * @return $this
-     */
-    public function setType($value)
-    {
-        $this->type = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
+        return $this->propertyType;
     }
 
     /**
@@ -155,55 +76,312 @@ class BaseOffer
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getPropertyType()
+    public function getRoomSpace()
     {
-        return $this->propertyType;
+        return $this->roomSpace;
     }
 
     /**
-     * @return string
-     */
-    public function getCommercialType()
-    {
-        return $this->commercialType;
-    }
-
-    /**
-     * @param string $commercialType
+     * @param mixed $roomSpace
      * @return $this
      */
-    public function setCommercialType($commercialType)
+    public function setRoomSpace($roomSpace)
     {
-        $this->commercialType = $commercialType;
+        $this->roomSpace = $roomSpace;
         return $this;
     }
 
     /**
-     * @param array $offerNode
+     * @return mixed
+     */
+    public function getLivingSpace()
+    {
+        return $this->livingSpace;
+    }
+
+    /**
+     * @param mixed $livingSpace
      * @return $this
      */
-    public function setOffer(array $offerNode)
+    public function setLivingSpace($livingSpace)
     {
-        foreach ($offerNode['attributes'] as $name => $value) {
-            $this->setField($name, $value);
-        }
-
-        foreach ($offerNode['nodes'] as $attrNode) {
-            $this->setAttribute($attrNode);
-        }
-
+        $this->livingSpace = $livingSpace;
         return $this;
     }
 
     /**
-     * @param array $attrNode
+     * @return mixed
+     */
+    public function getKitchenSpace()
+    {
+        return $this->kitchenSpace;
+    }
+
+    /**
+     * @param mixed $kitchenSpace
      * @return $this
      */
-    public function setAttribute(array $attrNode)
+    public function setKitchenSpace($kitchenSpace)
     {
-
+        $this->kitchenSpace = $kitchenSpace;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNewFlat()
+    {
+        return $this->newFlat;
+    }
+
+    /**
+     * @param mixed $newFlat
+     * @return $this
+     */
+    public function setNewFlat($newFlat)
+    {
+        $this->newFlat = $newFlat;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApartments()
+    {
+        return $this->apartments;
+    }
+
+    /**
+     * @param mixed $apartments
+     * @return $this
+     */
+    public function setApartments($apartments)
+    {
+        $this->apartments = $apartments;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStudio()
+    {
+        return $this->studio;
+    }
+
+    /**
+     * @param mixed $studio
+     * @return $this
+     */
+    public function setStudio($studio)
+    {
+        $this->studio = $studio;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpenPlan()
+    {
+        return $this->openPlan;
+    }
+
+    /**
+     * @param mixed $openPlan
+     * @return $this
+     */
+    public function setOpenPlan($openPlan)
+    {
+        $this->openPlan = $openPlan;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRoomsType()
+    {
+        return $this->roomsType;
+    }
+
+    /**
+     * @param mixed $roomsType
+     * @return $this
+     */
+    public function setRoomsType($roomsType)
+    {
+        $this->roomsType = $roomsType;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBalcony()
+    {
+        return $this->balcony;
+    }
+
+    /**
+     * @param mixed $balcony
+     * @return $this
+     */
+    public function setBalcony($balcony)
+    {
+        $this->balcony = $balcony;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBathroomUnit()
+    {
+        return $this->bathroomUnit;
+    }
+
+    /**
+     * @param mixed $bathroomUnit
+     * @return $this
+     */
+    public function setBathroomUnit($bathroomUnit)
+    {
+        $this->bathroomUnit = $bathroomUnit;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKitchenFurniture()
+    {
+        return $this->kitchenFurniture;
+    }
+
+    /**
+     * @param mixed $kitchenFurniture
+     * @return $this
+     */
+    public function setKitchenFurniture($kitchenFurniture)
+    {
+        $this->kitchenFurniture = $kitchenFurniture;
+        return $this;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getTelevision()
+    {
+        return $this->television;
+    }
+
+    /**
+     * @param mixed $television
+     * @return $this
+     */
+    public function setTelevision($television)
+    {
+        $this->television = $television;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWashingMachine()
+    {
+        return $this->washingMachine;
+    }
+
+    /**
+     * @param mixed $washingMachine
+     * @return $this
+     */
+    public function setWashingMachine($washingMachine)
+    {
+        $this->washingMachine = $washingMachine;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDishwasher()
+    {
+        return $this->dishwasher;
+    }
+
+    /**
+     * @param mixed $dishwasher
+     * @return $this
+     */
+    public function setDishwasher($dishwasher)
+    {
+        $this->dishwasher = $dishwasher;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefrigerator()
+    {
+        return $this->refrigerator;
+    }
+
+    /**
+     * @param mixed $refrigerator
+     */
+    public function setRefrigerator($refrigerator)
+    {
+        $this->refrigerator = $refrigerator;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuiltInTech()
+    {
+        return $this->builtInTech;
+    }
+
+    /**
+     * @param mixed $builtInTech
+     * @return $this
+     */
+    public function setBuiltInTech($builtInTech)
+    {
+        $this->builtInTech = $builtInTech;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYandexBuildingId()
+    {
+        return $this->yandexBuildingId;
+    }
+
+    /**
+     * @param mixed $yandexBuildingId
+     * @return $this
+     */
+    public function setYandexBuildingId($yandexBuildingId)
+    {
+        $this->yandexBuildingId = $yandexBuildingId;
+        return $this;
+    }
+
+
+    public function isValid()
+    {
+        // TODO: Implement isValid() method.
     }
 }
