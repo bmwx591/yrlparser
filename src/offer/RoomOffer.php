@@ -1,7 +1,7 @@
 <?php
 
 
-namespace bmwx591\yrl;
+namespace bmwx591\yrl\offer;
 
 
 class RoomOffer extends BaseOffer

@@ -4,7 +4,7 @@
 namespace bmwx591\yrl;
 
 
-class Option extends Object
+class Option extends NestedObject
 {
     protected $value;
 
@@ -20,10 +20,12 @@ class Option extends Object
 
     /**
      * @param mixed $value
+     * @return $this
      */
     public function setValue($value)
     {
         $this->value = $value;
+        return $this;
     }
 
     /**
@@ -36,14 +38,11 @@ class Option extends Object
 
     /**
      * @param mixed $unit
+     * @return $this
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
-    }
-
-    public function setAttribute(array $attrNode)
-    {
-        // TODO: Implement setAttribute() method.
+        return $this;
     }
 }

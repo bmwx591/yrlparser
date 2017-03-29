@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ivan
- * Date: 22.03.17
- * Time: 23:36
- */
 
 namespace bmwx591\yrl;
 
-
-class Location extends Object
+class Location extends NestedObject
 {
     protected $country;
 
@@ -35,6 +28,8 @@ class Location extends Object
 
     protected $metro;
 
+    protected $railwayStation;
+
     /**
      * @return mixed
      */
@@ -45,10 +40,12 @@ class Location extends Object
 
     /**
      * @param mixed $country
+     * @return $this
      */
     public function setCountry($country)
     {
         $this->country = $country;
+        return $this;
     }
 
     /**
@@ -61,10 +58,12 @@ class Location extends Object
 
     /**
      * @param mixed $region
+     * @return $this
      */
     public function setRegion($region)
     {
         $this->region = $region;
+        return $this;
     }
 
     /**
@@ -77,10 +76,12 @@ class Location extends Object
 
     /**
      * @param mixed $district
+     * @return $this
      */
     public function setDistrict($district)
     {
         $this->district = $district;
+        return $this;
     }
 
     /**
@@ -93,10 +94,12 @@ class Location extends Object
 
     /**
      * @param mixed $localityName
+     * @return $this
      */
     public function setLocalityName($localityName)
     {
         $this->localityName = $localityName;
+        return $this;
     }
 
     /**
@@ -109,10 +112,12 @@ class Location extends Object
 
     /**
      * @param mixed $subLocalityName
+     * @return $this
      */
     public function setSubLocalityName($subLocalityName)
     {
         $this->subLocalityName = $subLocalityName;
+        return $this;
     }
 
     /**
@@ -125,10 +130,12 @@ class Location extends Object
 
     /**
      * @param mixed $address
+     * @return $this
      */
     public function setAddress($address)
     {
         $this->address = $address;
+        return $this;
     }
 
     /**
@@ -141,10 +148,12 @@ class Location extends Object
 
     /**
      * @param mixed $apartment
+     * @return $this
      */
     public function setApartment($apartment)
     {
         $this->apartment = $apartment;
+        return $this;
     }
 
     /**
@@ -157,10 +166,12 @@ class Location extends Object
 
     /**
      * @param mixed $direction
+     * @return $this
      */
     public function setDirection($direction)
     {
         $this->direction = $direction;
+        return $this;
     }
 
     /**
@@ -173,10 +184,12 @@ class Location extends Object
 
     /**
      * @param mixed $distance
+     * @return $this
      */
     public function setDistance($distance)
     {
         $this->distance = $distance;
+        return $this;
     }
 
     /**
@@ -189,10 +202,12 @@ class Location extends Object
 
     /**
      * @param mixed $latitude
+     * @return $this
      */
     public function setLatitude($latitude)
     {
         $this->latitude = $latitude;
+        return $this;
     }
 
     /**
@@ -205,10 +220,12 @@ class Location extends Object
 
     /**
      * @param mixed $longitude
+     * @return $this
      */
     public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
+        return $this;
     }
 
     /**
@@ -221,17 +238,40 @@ class Location extends Object
 
     /**
      * @param mixed $metro
+     * @return $this
      */
-    public function setMetro($metro)
+    public function setMetro(Metro $metro)
     {
         $this->metro = $metro;
+        return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRailwayStation()
+    {
+        return $this->railwayStation;
+    }
+
+    /**
+     * @param mixed $railwayStation
+     * @return $this
+     */
+    public function setRailwayStation($railwayStation)
+    {
+        $this->railwayStation = $railwayStation;
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function setAttribute(array $attrNode)
     {
         if ('metro' == $attrNode['name']) {
-            $this->metro = $this->setMetro((new Metro())->setOptions($attrNode));
+            return $this->setMetro((new Metro($this))->setOptions($attrNode));
         }
-        return $this;
+        return parent::setAttribute($attrNode);
     }
 }

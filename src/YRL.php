@@ -2,6 +2,15 @@
 
 namespace bmwx591\yrl;
 
+use bmwx591\yrl\offer\BaseOffer;
+use bmwx591\yrl\offer\CommercialOffer;
+use bmwx591\yrl\offer\FlatOffer;
+use bmwx591\yrl\offer\GarageOffer;
+use bmwx591\yrl\offer\HouseOffer;
+use bmwx591\yrl\offer\HouseWithLotOffer;
+use bmwx591\yrl\offer\LotOffer;
+use bmwx591\yrl\offer\RoomOffer;
+
 class YRL {
 
     protected $XMLReader;
@@ -11,6 +20,8 @@ class YRL {
     protected $schema;
 
     protected $date;
+
+    protected $offersCount;
 
     protected $pathArr = [];
 
@@ -30,19 +41,25 @@ class YRL {
         while ($this->read()) {
             if ('realty-feed/offer' == $this->path) {
                 yield $this->parseOffer();
-            } elseif ('realty-feed' == $this->path) {
-                break;
             }
         }
         $this->close();
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getOffersCount()
+    {
+        return $this->offersCount;
     }
 
     /**
@@ -56,12 +73,12 @@ class YRL {
         $this->schema = $schema;
         $this->open();
         while ($this->read()) {
-            if ('realty-feed' == $this->path) {
-                $this->read();
-                if ('realty-feed/generation-date' == $this->path) {
-                    $this->date = new \DateTime($this->XMLReader->value);
-                    break;
-                }
+            if ('realty-feed/generation-date' == $this->path) {
+                $this->date = $this->XMLReader->readString();
+            }
+            if ('realty-feed/offer' == $this->path) {
+                $this->offersCount = $this->parseOffersCount();
+                break;
             }
         }
         $this->close();
@@ -112,11 +129,24 @@ class YRL {
         $this->XMLReader->close();
     }
 
+    protected function parseOffersCount()
+    {
+        $count = 1;
+        $xml = $this->XMLReader;
+
+        while ($xml->next($xml->localName)) {
+            $count++;
+        }
+        return $count;
+    }
+
     protected function parseOffer()
     {
-        $offerNode = $this->parseNode('realty-feed/offer');
-        $offer = $this->createOffer($offerNode['category'])->setOptions($offerNode);
-        return $offer;
+        $offerNode = $this->parseNode('realty-feed');
+        $category = array_values(array_filter($offerNode['nodes'], function($item) {
+            return 'category' == $item['name'];
+        }));
+        return $this->createOffer($category[0]['value'])->setOptions($offerNode);
     }
 
     protected function parseNode($basePath)
@@ -133,11 +163,9 @@ class YRL {
             while ($this->read()) {
                 if ($xml->nodeType == \XMLReader::ELEMENT) {
                     $nodes[] = $this->parseNode($path);
-                }
-                elseif (($xml->nodeType == \XMLReader::TEXT || $xml->nodeType == \XMLReader::CDATA) && $xml->hasValue) {
+                } elseif (($xml->nodeType == \XMLReader::TEXT || $xml->nodeType == \XMLReader::CDATA) && $xml->hasValue) {
                     $value .= $xml->value;
-                }
-                elseif ($this->path == $basePath) {
+                } elseif ($this->path == $basePath) {
                     break;
                 }
             }
@@ -164,21 +192,33 @@ class YRL {
 
     /**
      * @param string $type
-     * @return BaseOffer|CommercialOffer|NewBuildingOffer
+     * @return BaseOffer|CommercialOffer|FlatOffer|HouseOffer|LotOffer|RoomOffer
      */
     protected function createOffer($type)
     {
         switch ($type) {
             case 'дом' :
             case 'house' :
+            case 'часть дома' :
+                return new HouseOffer();
             case 'квартира' :
             case 'flat' :
-            case 'таунхаус' :
-            case 'townhouse' :
-                return new NewBuildingOffer();
+                return new FlatOffer();
             case 'коммерческая' :
             case 'commercial' :
                 return new CommercialOffer();
+            case 'комната' :
+            case 'room' :
+                return new RoomOffer();
+            case 'участок' :
+            case 'lot' :
+                return new LotOffer();
+            case 'дом с участком' :
+            case 'house with lot' :
+                return new HouseWithLotOffer();
+            case 'гараж' :
+            case 'garage' :
+                return new GarageOffer();
             default :
                 return new BaseOffer();
         }

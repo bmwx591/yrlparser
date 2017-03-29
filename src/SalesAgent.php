@@ -2,11 +2,11 @@
 
 namespace bmwx591\yrl;
 
-class SalesAgent extends Object
+class SalesAgent extends NestedObject
 {
     protected $name;
 
-    protected $phone;
+    protected $phones = [];
 
     protected $category;
 
@@ -32,26 +32,40 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $name
+     * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getPhone()
+    public function getPhones()
     {
-        return $this->phone;
+        return $this->phones;
     }
 
     /**
-     * @param mixed $phone
+     * @param string $phone
+     * @return $this
      */
-    public function setPhone($phone)
+    public function addPhone($phone)
     {
-        $this->phone = $phone;
+        array_push($this->phones, $phone);
+        return $this;
+    }
+
+    /**
+     * @param array $phones
+     * @return $this
+     */
+    public function setPhones(array $phones)
+    {
+        $this->phones = $phones;
+        return $this;
     }
 
     /**
@@ -64,10 +78,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $category
+     * @return $this
      */
     public function setCategory($category)
     {
         $this->category = $category;
+        return $this;
     }
 
     /**
@@ -80,10 +96,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $organization
+     * @return $this
      */
     public function setOrganization($organization)
     {
         $this->organization = $organization;
+        return $this;
     }
 
     /**
@@ -96,10 +114,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $agencyId
+     * @return $this
      */
     public function setAgencyId($agencyId)
     {
         $this->agencyId = $agencyId;
+        return $this;
     }
 
     /**
@@ -112,10 +132,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $url
+     * @return $this
      */
     public function setUrl($url)
     {
         $this->url = $url;
+        return $this;
     }
 
     /**
@@ -128,10 +150,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $email
+     * @return $this
      */
     public function setEmail($email)
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
@@ -144,10 +168,12 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $photo
+     * @return $this
      */
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+        return $this;
     }
 
     /**
@@ -160,14 +186,19 @@ class SalesAgent extends Object
 
     /**
      * @param mixed $partner
+     * @return $this
      */
     public function setPartner($partner)
     {
         $this->partner = $partner;
+        return $this;
     }
 
     public function setAttribute(array $attrNode)
     {
-        // TODO: Implement setAttribute() method.
+        if ('phone' == $attrNode['name']) {
+            return $this->addPhone($attrNode['value']);
+        }
+        return parent::setAttribute($attrNode);
     }
 }

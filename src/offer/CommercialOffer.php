@@ -1,6 +1,6 @@
 <?php
 
-namespace bmwx591\yrl;
+namespace bmwx591\yrl\offer;
 
 class CommercialOffer extends Offer
 {
@@ -14,13 +14,7 @@ class CommercialOffer extends Offer
 
     protected $lotNumber;
 
-    protected $payedAdv;
-
     protected $manuallyAdded;
-
-    protected $quality;
-
-    protected $internet;
 
     protected $roomFurniture;
 
@@ -37,18 +31,6 @@ class CommercialOffer extends Offer
     protected $ventilation;
 
     protected $fireAlarm;
-
-    protected $waterSupply;
-
-    protected $sewerageSupply;
-
-    protected $electricitySupply;
-
-    protected $electricCapacity;
-
-    protected $gasSupply;
-
-    protected $heatingSupply;
 
     protected $windowType;
 
@@ -89,6 +71,8 @@ class CommercialOffer extends Offer
     protected $serviceThreePl;
 
     protected $temperatureComment;
+
+    protected $cadastralNumber;
 
     /**
      * @return string
@@ -193,77 +177,6 @@ class CommercialOffer extends Offer
     public function setCadastralNumber($cadastralNumber)
     {
         $this->cadastralNumber = $cadastralNumber;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPayedAdv()
-    {
-        return $this->payedAdv;
-    }
-
-    /**
-     * @param mixed $payedAdv
-     * @return $this
-     */
-    public function setPayedAdv($payedAdv)
-    {
-        $this->payedAdv = $payedAdv;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getManuallyAdded()
-    {
-        return $this->manuallyAdded;
-    }
-
-    /**
-     * @param mixed $manuallyAdded
-     * @return $this
-     */
-    public function setManuallyAdded($manuallyAdded)
-    {
-        $this->manuallyAdded = $manuallyAdded;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getQuality()
-    {
-        return $this->quality;
-    }
-
-    /**
-     * @param mixed $quality
-     * @return $this
-     */
-    public function setQuality($quality)
-    {
-        $this->quality = $quality;
-        return $this;
-    }
-    /**
-     * @return mixed
-     */
-    public function getInternet()
-    {
-        return $this->internet;
-    }
-
-    /**
-     * @param mixed $internet
-     * @return $this
-     */
-    public function setInternet($internet)
-    {
-        $this->internet = $internet;
         return $this;
     }
 
@@ -408,114 +321,6 @@ class CommercialOffer extends Offer
     public function setFireAlarm($fireAlarm)
     {
         $this->fireAlarm = $fireAlarm;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getWaterSupply()
-    {
-        return $this->waterSupply;
-    }
-
-    /**
-     * @param mixed $waterSupply
-     * @return $this
-     */
-    public function setWaterSupply($waterSupply)
-    {
-        $this->waterSupply = $waterSupply;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSewerageSupply()
-    {
-        return $this->sewerageSupply;
-    }
-
-    /**
-     * @param mixed $sewerageSupply
-     * @return $this
-     */
-    public function setSewerageSupply($sewerageSupply)
-    {
-        $this->sewerageSupply = $sewerageSupply;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getElectricitySupply()
-    {
-        return $this->electricitySupply;
-    }
-
-    /**
-     * @param mixed $electricitySupply
-     * @return $this
-     */
-    public function setElectricitySupply($electricitySupply)
-    {
-        $this->electricitySupply = $electricitySupply;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getElectricCapacity()
-    {
-        return $this->electricCapacity;
-    }
-
-    /**
-     * @param mixed $electricCapacity
-     * @return $this
-     */
-    public function setElectricCapacity($electricCapacity)
-    {
-        $this->electricCapacity = $electricCapacity;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGasSupply()
-    {
-        return $this->gasSupply;
-    }
-
-    /**
-     * @param mixed $gasSupply
-     * @return $this
-     */
-    public function setGasSupply($gasSupply)
-    {
-        $this->gasSupply = $gasSupply;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeatingSupply()
-    {
-        return $this->heatingSupply;
-    }
-
-    /**
-     * @param mixed $heatingSupply
-     * @return $this
-     */
-    public function setHeatingSupply($heatingSupply)
-    {
-        $this->heatingSupply = $heatingSupply;
         return $this;
     }
 

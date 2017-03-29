@@ -2,7 +2,7 @@
 
 namespace bmwx591\yrl;
 
-class Metro extends Object
+class Metro extends NestedObject
 {
     protected $name;
 
@@ -20,10 +20,12 @@ class Metro extends Object
 
     /**
      * @param mixed $name
+     * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
     }
 
     /**
@@ -36,10 +38,12 @@ class Metro extends Object
 
     /**
      * @param mixed $timeOnTransport
+     * @return $this
      */
     public function setTimeOnTransport($timeOnTransport)
     {
         $this->timeOnTransport = $timeOnTransport;
+        return $this;
     }
 
     /**
@@ -52,14 +56,11 @@ class Metro extends Object
 
     /**
      * @param mixed $timeOnFoot
+     * @return $this
      */
     public function setTimeOnFoot($timeOnFoot)
     {
         $this->timeOnFoot = $timeOnFoot;
-    }
-
-    public function setAttribute(array $attrNode)
-    {
-
+        return $this;
     }
 }

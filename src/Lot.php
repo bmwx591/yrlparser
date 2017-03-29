@@ -2,9 +2,8 @@
 
 namespace bmwx591\yrl;
 
-class LotOffer extends BaseOffer
+trait Lot
 {
-
     protected $lotArea;
 
     protected $lotType;
@@ -21,7 +20,7 @@ class LotOffer extends BaseOffer
      * @param mixed $lotArea
      * @return $this
      */
-    public function setLotArea($lotArea)
+    public function setLotArea(Option $lotArea)
     {
         $this->lotArea = $lotArea;
         return $this;
@@ -43,15 +42,5 @@ class LotOffer extends BaseOffer
     {
         $this->lotType = $lotType;
         return $this;
-    }
-
-
-    public function isValid()
-    {
-        $isValid = parent::isValid();
-        if ($isValid) {
-
-        }
-        return $isValid;
     }
 }

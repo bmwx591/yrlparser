@@ -1,8 +1,10 @@
 <?php
 
 
-namespace bmwx591\yrl;
+namespace bmwx591\yrl\offer;
 
+
+use bmwx591\yrl\Option;
 
 class BaseOffer extends Offer
 {
@@ -87,7 +89,7 @@ class BaseOffer extends Offer
      * @param mixed $roomSpace
      * @return $this
      */
-    public function setRoomSpace($roomSpace)
+    public function setRoomSpace(Option $roomSpace)
     {
         $this->roomSpace = $roomSpace;
         return $this;
@@ -105,7 +107,7 @@ class BaseOffer extends Offer
      * @param mixed $livingSpace
      * @return $this
      */
-    public function setLivingSpace($livingSpace)
+    public function setLivingSpace(Option $livingSpace)
     {
         $this->livingSpace = $livingSpace;
         return $this;
@@ -123,7 +125,7 @@ class BaseOffer extends Offer
      * @param mixed $kitchenSpace
      * @return $this
      */
-    public function setKitchenSpace($kitchenSpace)
+    public function setKitchenSpace(Option $kitchenSpace)
     {
         $this->kitchenSpace = $kitchenSpace;
         return $this;
@@ -379,6 +381,131 @@ class BaseOffer extends Offer
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getBuildingType()
+    {
+        return $this->buildingType;
+    }
+
+    /**
+     * @param mixed $buildingType
+     * @return $this
+     */
+    public function setBuildingType($buildingType)
+    {
+        $this->buildingType = $buildingType;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuildingSeries()
+    {
+        return $this->buildingSeries;
+    }
+
+    /**
+     * @param mixed $buildingSeries
+     * @return $this
+     */
+    public function setBuildingSeries($buildingSeries)
+    {
+        $this->buildingSeries = $buildingSeries;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuildingPhase()
+    {
+        return $this->buildingPhase;
+    }
+
+    /**
+     * @param mixed $buildingPhase
+     * @return $this
+     */
+    public function setBuildingPhase($buildingPhase)
+    {
+        $this->buildingPhase = $buildingPhase;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuildingSection()
+    {
+        return $this->buildingSection;
+    }
+
+    /**
+     * @param mixed $buildingSection
+     * @return $this
+     */
+    public function setBuildingSection($buildingSection)
+    {
+        $this->buildingSection = $buildingSection;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReadyQuarter()
+    {
+        return $this->readyQuarter;
+    }
+
+    /**
+     * @param mixed $readyQuarter
+     * @return $this
+     */
+    public function setReadyQuarter($readyQuarter)
+    {
+        $this->readyQuarter = $readyQuarter;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuildingState()
+    {
+        return $this->buildingState;
+    }
+
+    /**
+     * @param mixed $buildingState
+     * @return $this
+     */
+    public function setBuildingState($buildingState)
+    {
+        $this->buildingState = $buildingState;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRubbishChute()
+    {
+        return $this->rubbishChute;
+    }
+
+    /**
+     * @param mixed $rubbishChute
+     * @return $this
+     */
+    public function setRubbishChute($rubbishChute)
+    {
+        $this->rubbishChute = $rubbishChute;
+        return $this;
+    }
 
     public function isValid()
     {
