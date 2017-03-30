@@ -25,4 +25,15 @@ class HouseOffer extends BaseOffer
         $this->alarm = $alarm;
         return $this;
     }
+
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->area)) {
+                return true;
+            }
+        }
+        return $isValid;
+    }
 }

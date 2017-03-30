@@ -26,7 +26,7 @@ class Location extends NestedObject
 
     protected $longitude;
 
-    protected $metro;
+    protected $metro = [];
 
     protected $railwayStation;
 
@@ -236,11 +236,17 @@ class Location extends NestedObject
         return $this->metro;
     }
 
+    public function addMetro(Metro $metro)
+    {
+        array_push($this->metro, $metro);
+        return $this;
+    }
+
     /**
-     * @param mixed $metro
+     * @param Metro[] $metro
      * @return $this
      */
-    public function setMetro(Metro $metro)
+    public function setMetro(array $metro)
     {
         $this->metro = $metro;
         return $this;
@@ -270,8 +276,19 @@ class Location extends NestedObject
     public function setAttribute(array $attrNode)
     {
         if ('metro' == $attrNode['name']) {
-            return $this->setMetro((new Metro($this))->setOptions($attrNode));
+            return $this->addMetro((new Metro($this))->setOptions($attrNode));
         }
         return parent::setAttribute($attrNode);
+    }
+
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->country)) {
+                return true;
+            }
+        }
+        return $isValid;
     }
 }

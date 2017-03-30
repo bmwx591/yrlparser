@@ -201,4 +201,15 @@ class SalesAgent extends NestedObject
         }
         return parent::setAttribute($attrNode);
     }
+
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->country, $this->phone)) {
+                return true;
+            }
+        }
+        return $isValid;
+    }
 }

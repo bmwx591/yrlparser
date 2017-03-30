@@ -8,6 +8,10 @@ use bmwx591\yrl\Option;
 use bmwx591\yrl\Price;
 use bmwx591\yrl\SalesAgent;
 
+/**
+ * Class Offer
+ * @package bmwx591\yrl\offer
+ */
 abstract class Offer extends Object
 {
     protected $internalId;
@@ -30,8 +34,14 @@ abstract class Offer extends Object
 
     protected $images = [];
 
+    /**
+     * @var SalesAgent
+     */
     protected $salesAgent;
 
+    /**
+     * @var Price
+     */
     protected $price;
 
     protected $area;
@@ -115,6 +125,10 @@ abstract class Offer extends Object
     protected $electricityIncluded;
 
     protected $internet;
+
+    protected $lotArea;
+
+    protected $lotType;
 
     protected $errors = [];
 
@@ -1021,6 +1035,42 @@ abstract class Offer extends Object
     }
 
     /**
+     * @return mixed
+     */
+    public function getLotArea()
+    {
+        return $this->lotArea;
+    }
+
+    /**
+     * @param mixed $lotArea
+     * @return $this
+     */
+    public function setLotArea(Option $lotArea)
+    {
+        $this->lotArea = $lotArea;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLotType()
+    {
+        return $this->lotType;
+    }
+
+    /**
+     * @param mixed $lotType
+     * @return $this
+     */
+    public function setLotType($lotType)
+    {
+        $this->lotType = $lotType;
+        return $this;
+    }
+
+    /**
      * @inheritdoc
      */
     public function setAttribute(array $attrNode)
@@ -1038,7 +1088,7 @@ abstract class Offer extends Object
         if ('image' == $name) {
             return $this->addImage($attrNode['value']);
         }
-        if (in_array($name, ['area', 'room-space', 'living-space', 'kitchen-space', 'lot-area'])) {
+        if (in_array($name, ['area', 'living-space', 'kitchen-space', 'lot-area'])) {
             $setter = 'set' . str_replace(['-', '_'], '', $name);
             return $this->$setter((new Option($this))->setOptions($attrNode));
         }
@@ -1071,5 +1121,14 @@ abstract class Offer extends Object
      * Validate offer
      * @return bool
      */
-    abstract public function isValid();
+    public function isValid()
+    {
+        if (!isset($this->type, $this->category, $this->url, $this->creationDate, $this->lastUpdateDate,
+            $this->location, $this->salesAgent, $this->price, $this->dealStatus, $this->floor,
+            $this->floorsTotal, $this->buildingName) || !$this->price->isValid() || !$this->salesAgent->isValid() ||
+            empty($this->images)) {
+            return true;
+        }
+        return false;
+    }
 }

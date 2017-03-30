@@ -11,7 +11,7 @@ class BaseOffer extends Offer
 
     protected $propertyType;
 
-    protected $roomSpace;
+    protected $roomSpace = [];
 
     protected $livingSpace;
 
@@ -85,11 +85,17 @@ class BaseOffer extends Offer
         return $this->roomSpace;
     }
 
+    public function addRoomSpace(Option $roomSpace)
+    {
+        array_push($this->roomSpace, $roomSpace);
+        return $this;
+    }
+
     /**
-     * @param mixed $roomSpace
+     * @param Option[] $roomSpace
      * @return $this
      */
-    public function setRoomSpace(Option $roomSpace)
+    public function setRoomSpace(array $roomSpace)
     {
         $this->roomSpace = $roomSpace;
         return $this;
@@ -507,8 +513,42 @@ class BaseOffer extends Offer
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isNewFlat()
+    {
+        return in_array($this->newFlat, ['да', 'true', '1', '+']);
+    }
+
+    public function isValidNewFlat()
+    {
+        return $this->isNewFlat() ?
+            isset($this->floorsTotal, $this->buildingName, $this->yandexBuildingId,
+            $this->builtYear, $this->readyQuarter, $this->buildingState) &&
+            preg_match('/^\d{4}$/', $this->builtYear) : true;
+    }
+
+    public function setAttribute(array $attrNode)
+    {
+        if ('room-space' == $attrNode['name']) {
+            return $this->addRoomSpace((new Option($this))->setOptions($attrNode));
+        }
+        return parent::setAttribute($attrNode);
+    }
+
+    /**
+     * @return bool
+     */
     public function isValid()
     {
-        // TODO: Implement isValid() method.
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->propertyType, $this->rooms, $this->readyQuarter, $this->buildingState) &&
+                $this->isValidNewFlat()) {
+                return true;
+            }
+        }
+        return $isValid;
     }
 }

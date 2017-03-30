@@ -32,9 +32,6 @@ class YRL {
         $this->XMLReader = new \XMLReader();
     }
 
-    /**
-     * @return array
-     */
     public function getOffers()
     {
         $this->open();
@@ -64,13 +61,17 @@ class YRL {
 
     /**
      * @param string $uri
-     * @param string|null $schema
+     * @param string|boolean $schema
      * @throws \Exception
      */
-    public function parse($uri, $schema = null)
+    public function parse($uri, $schema = true)
     {
         $this->uri = $uri;
-        $this->schema = $schema;
+        if ($schema === true) {
+            $this->schema = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'yrl_schema.xsd';
+        } elseif (is_string($schema)) {
+            $this->schema = $schema;
+        }
         $this->open();
         while ($this->read()) {
             if ('realty-feed/generation-date' == $this->path) {

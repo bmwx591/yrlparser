@@ -266,5 +266,18 @@ class Price extends NestedObject
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->value, $this->currency)) {
+                return true;
+            }
+        }
+        return $isValid;
+    }
 
 }

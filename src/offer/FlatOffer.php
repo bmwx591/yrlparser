@@ -45,4 +45,15 @@ class FlatOffer extends BaseOffer
         $this->roomsOffered = $roomsOffered;
         return $this;
     }
+
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->area, $this->studio, $this->openPlan)) {
+                return true;
+            }
+        }
+        return $isValid;
+    }
 }

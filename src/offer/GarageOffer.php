@@ -285,4 +285,15 @@ class GarageOffer extends BaseOffer
         $this->newParking = $newParking;
         return $this;
     }
+
+    public function isValid()
+    {
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->area)) {
+                return true;
+            }
+        }
+        return $isValid;
+    }
 }

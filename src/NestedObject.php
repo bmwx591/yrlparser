@@ -20,4 +20,9 @@ abstract class NestedObject extends Object
     {
         return $this->parent;
     }
+
+    public function isValid()
+    {
+        return true;
+    }
 }

@@ -689,6 +689,12 @@ class CommercialOffer extends Offer
      */
     public function isValid()
     {
-        // TODO: Implement isValid() method.
+        $isValid = parent::isValid();
+        if ($isValid) {
+            if (isset($this->area)) {
+                return true;
+            }
+        }
+        return $isValid;
     }
 }
