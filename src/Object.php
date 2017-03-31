@@ -4,6 +4,43 @@ namespace bmwx591\yrl;
 
 abstract class Object
 {
+    protected $errors = [];
+
+    /**
+     * @return bool
+     */
+    public function hasErrors()
+    {
+        return empty($this->errors);
+    }
+
+    /**
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
+
+    /**
+     * @param array $errors
+     * @return $this
+     */
+    public function setErrors(array $errors)
+    {
+        $this->errors = $errors;
+        return $this;
+    }
+
+    /**
+     * @param string $error
+     * @return $this
+     */
+    public function addError($error)
+    {
+        array_push($this->errors, $error);
+        return $this;
+    }
 
     /**
      * @param array $nodeOptions

@@ -51,7 +51,7 @@ class ExampleTest extends \Codeception\TestCase\Test
         $this->assertInstanceOf(\bmwx591\yrl\offer\BaseOffer::class, $offer);
         $offers->next();
         $offer = $offers->current();
-        $this->assertInstanceOf(\bmwx591\yrl\offer\HouseWithLotOffer::class, $offer);
+        $this->assertInstanceOf(\bmwx591\yrl\offer\HouseOffer::class, $offer);
         $offers->next();
         $offer = $offers->current();
         $this->assertInstanceOf(\bmwx591\yrl\offer\CommercialOffer::class, $offer);
@@ -61,5 +61,17 @@ class ExampleTest extends \Codeception\TestCase\Test
         $offers->next();
         $offer = $offers->current();
         $this->assertEquals(null, $offer);
+    }
+
+    public function testExpect()
+    {
+        $offers = $this->parser->getOffers();
+//        var_dump($offers->current());
+        $offers->next();
+        $offers->next();
+        $offers->next();
+        $offers->next();
+        var_dump($offers->current());
+        die;
     }
 }

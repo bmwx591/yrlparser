@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl\offer;
 
+/**
+ * Class CommercialOffer
+ * @package bmwx591\yrl\offer
+ */
 class CommercialOffer extends Offer
 {
     protected $commercialType;
@@ -93,7 +97,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCommercialBuildingType()
     {
@@ -101,7 +105,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $commercialBuildingType
+     * @param string $commercialBuildingType
      * @return $this
      */
     public function setCommercialBuildingType($commercialBuildingType)
@@ -111,7 +115,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPurpose()
     {
@@ -119,7 +123,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $purpose
+     * @param string $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -129,7 +133,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPurposeWarehouse()
     {
@@ -137,15 +141,17 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $purposeWarehouse
+     * @param string $purposeWarehouse
+     * @return $this
      */
     public function setPurposeWarehouse($purposeWarehouse)
     {
         $this->purposeWarehouse = $purposeWarehouse;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLotNumber()
     {
@@ -153,7 +159,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $lotNumber
+     * @param string $lotNumber
      * @return $this
      */
     public function setLotNumber($lotNumber)
@@ -163,7 +169,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCadastralNumber()
     {
@@ -171,7 +177,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $cadastralNumber
+     * @param string $cadastralNumber
      * @return $this
      */
     public function setCadastralNumber($cadastralNumber)
@@ -181,7 +187,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRoomFurniture()
     {
@@ -189,7 +195,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $roomFurniture
+     * @param string $roomFurniture
      * @return $this
      */
     public function setRoomFurniture($roomFurniture)
@@ -199,7 +205,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEntranceType()
     {
@@ -207,7 +213,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $entranceType
+     * @param string $entranceType
      * @return $this
      */
     public function setEntranceType($entranceType)
@@ -217,7 +223,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPhoneLines()
     {
@@ -225,7 +231,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $phoneLines
+     * @param integer $phoneLines
      * @return $this
      */
     public function setPhoneLines($phoneLines)
@@ -235,7 +241,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAddingPhoneOnRequest()
     {
@@ -243,7 +249,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $addingPhoneOnRequest
+     * @param string $addingPhoneOnRequest
      * @return $this
      */
     public function setAddingPhoneOnRequest($addingPhoneOnRequest)
@@ -253,7 +259,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSelfSelectionTelecom()
     {
@@ -261,7 +267,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $selfSelectionTelecom
+     * @param string $selfSelectionTelecom
      * @return $this
      */
     public function setSelfSelectionTelecom($selfSelectionTelecom)
@@ -271,7 +277,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAirConditioner()
     {
@@ -279,7 +285,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $airConditioner
+     * @param string $airConditioner
      * @return $this
      */
     public function setAirConditioner($airConditioner)
@@ -289,7 +295,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getVentilation()
     {
@@ -297,7 +303,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $ventilation
+     * @param string $ventilation
      * @return $this
      */
     public function setVentilation($ventilation)
@@ -307,7 +313,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFireAlarm()
     {
@@ -315,7 +321,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $fireAlarm
+     * @param string $fireAlarm
      * @return $this
      */
     public function setFireAlarm($fireAlarm)
@@ -325,7 +331,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWindowType()
     {
@@ -333,7 +339,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $windowType
+     * @param string $windowType
      * @return $this
      */
     public function setWindowType($windowType)
@@ -343,7 +349,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOfficeClass()
     {
@@ -351,7 +357,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $officeClass
+     * @param string $officeClass
      * @return $this
      */
     public function setOfficeClass($officeClass)
@@ -361,7 +367,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAccessControlSystem()
     {
@@ -369,7 +375,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $accessControlSystem
+     * @param string $accessControlSystem
      * @return $this
      */
     public function setAccessControlSystem($accessControlSystem)
@@ -379,7 +385,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTwentyFourSeven()
     {
@@ -387,7 +393,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $twentyFourSeven
+     * @param string $twentyFourSeven
      * @return $this
      */
     public function setTwentyFourSeven($twentyFourSeven)
@@ -397,7 +403,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getParkingPlaces()
     {
@@ -405,7 +411,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $parkingPlaces
+     * @param integer $parkingPlaces
      * @return $this
      */
     public function setParkingPlaces($parkingPlaces)
@@ -415,7 +421,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getParkingPlacePrice()
     {
@@ -423,7 +429,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $parkingPlacePrice
+     * @param float $parkingPlacePrice
      * @return $this
      */
     public function setParkingPlacePrice($parkingPlacePrice)
@@ -433,7 +439,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getParkingGuest()
     {
@@ -441,7 +447,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $parkingGuest
+     * @param string $parkingGuest
      * @return $this
      */
     public function setParkingGuest($parkingGuest)
@@ -451,7 +457,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getParkingGuestPlaces()
     {
@@ -459,7 +465,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $parkingGuestPlaces
+     * @param integer $parkingGuestPlaces
      * @return $this
      */
     public function setParkingGuestPlaces($parkingGuestPlaces)
@@ -469,7 +475,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSecurity()
     {
@@ -477,7 +483,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $security
+     * @param string $security
      * @return $this
      */
     public function setSecurity($security)
@@ -487,7 +493,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEatingFacilities()
     {
@@ -495,7 +501,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $eatingFacilities
+     * @param string $eatingFacilities
      * @return $this
      */
     public function setEatingFacilities($eatingFacilities)
@@ -505,7 +511,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getResponsibleStorage()
     {
@@ -513,7 +519,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $responsibleStorage
+     * @param string $responsibleStorage
      * @return $this
      */
     public function setResponsibleStorage($responsibleStorage)
@@ -523,7 +529,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getPalletPrice()
     {
@@ -531,7 +537,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $palletPrice
+     * @param float $palletPrice
      * @return $this
      */
     public function setPalletPrice($palletPrice)
@@ -541,7 +547,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFreightElevator()
     {
@@ -549,7 +555,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $freightElevator
+     * @param string $freightElevator
      * @return $this
      */
     public function setFreightElevator($freightElevator)
@@ -559,7 +565,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTruckEntrance()
     {
@@ -567,7 +573,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $truckEntrance
+     * @param string $truckEntrance
      * @return $this
      */
     public function setTruckEntrance($truckEntrance)
@@ -577,7 +583,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRamp()
     {
@@ -585,7 +591,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $ramp
+     * @param string $ramp
      * @return $this
      */
     public function setRamp($ramp)
@@ -595,7 +601,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRailway()
     {
@@ -603,7 +609,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $railway
+     * @param string $railway
      * @return $this
      */
     public function setRailway($railway)
@@ -613,7 +619,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOfficeWarehouse()
     {
@@ -621,7 +627,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $officeWarehouse
+     * @param string $officeWarehouse
      * @return $this
      */
     public function setOfficeWarehouse($officeWarehouse)
@@ -631,7 +637,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOpenArea()
     {
@@ -639,7 +645,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $openArea
+     * @param string $openArea
      * @return $this
      */
     public function setOpenArea($openArea)
@@ -649,7 +655,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getServiceThreePl()
     {
@@ -657,7 +663,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $serviceThreePl
+     * @param string $serviceThreePl
      * @return $this
      */
     public function setServiceThreePl($serviceThreePl)
@@ -667,7 +673,7 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTemperatureComment()
     {
@@ -675,26 +681,12 @@ class CommercialOffer extends Offer
     }
 
     /**
-     * @param mixed $temperatureComment
+     * @param string $temperatureComment
      * @return $this
      */
     public function setTemperatureComment($temperatureComment)
     {
         $this->temperatureComment = $temperatureComment;
         return $this;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function isValid()
-    {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->area)) {
-                return true;
-            }
-        }
-        return $isValid;
     }
 }

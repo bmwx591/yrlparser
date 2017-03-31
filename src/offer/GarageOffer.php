@@ -35,7 +35,7 @@ class GarageOffer extends BaseOffer
     protected $newParking;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getGarageType()
     {
@@ -43,7 +43,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $garageType
+     * @param string $garageType
      * @return $this
      */
     public function setGarageType($garageType)
@@ -53,7 +53,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOwnershipType()
     {
@@ -61,7 +61,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $ownershipType
+     * @param string $ownershipType
      * @return $this
      */
     public function setOwnershipType($ownershipType)
@@ -71,7 +71,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getGarageName()
     {
@@ -79,7 +79,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $garageName
+     * @param string $garageName
      * @return $this
      */
     public function setGarageName($garageName)
@@ -89,7 +89,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getParkingType()
     {
@@ -97,7 +97,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $parkingType
+     * @param string $parkingType
      * @return $this
      */
     public function setParkingType($parkingType)
@@ -107,7 +107,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSecurity()
     {
@@ -115,7 +115,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $security
+     * @param string $security
      * @return $this
      */
     public function setSecurity($security)
@@ -125,7 +125,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAutomaticGates()
     {
@@ -133,7 +133,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $automaticGates
+     * @param string $automaticGates
      * @return $this
      */
     public function setAutomaticGates($automaticGates)
@@ -143,7 +143,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCctv()
     {
@@ -151,7 +151,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $cctv
+     * @param string $cctv
      * @return $this
      */
     public function setCctv($cctv)
@@ -161,7 +161,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFireAlarm()
     {
@@ -169,7 +169,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $fireAlarm
+     * @param string $fireAlarm
      * @return $this
      */
     public function setFireAlarm($fireAlarm)
@@ -179,7 +179,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAccessControlSystem()
     {
@@ -187,7 +187,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $accessControlSystem
+     * @param string $accessControlSystem
      * @return $this
      */
     public function setAccessControlSystem($accessControlSystem)
@@ -197,7 +197,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getInspectionPit()
     {
@@ -205,7 +205,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $inspectionPit
+     * @param string $inspectionPit
      * @return $this
      */
     public function setInspectionPit($inspectionPit)
@@ -215,7 +215,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCellar()
     {
@@ -223,7 +223,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $cellar
+     * @param string $cellar
      * @return $this
      */
     public function setCellar($cellar)
@@ -233,7 +233,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCarWash()
     {
@@ -241,7 +241,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $carWash
+     * @param string $carWash
      * @return $this
      */
     public function setCarWash($carWash)
@@ -251,7 +251,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAutoRepair()
     {
@@ -259,7 +259,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $autoRepair
+     * @param string $autoRepair
      * @return $this
      */
     public function setAutoRepair($autoRepair)
@@ -269,7 +269,7 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getNewParking()
     {
@@ -277,23 +277,12 @@ class GarageOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $newParking
+     * @param string $newParking
      * @return $this
      */
     public function setNewParking($newParking)
     {
         $this->newParking = $newParking;
         return $this;
-    }
-
-    public function isValid()
-    {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->area)) {
-                return true;
-            }
-        }
-        return $isValid;
     }
 }

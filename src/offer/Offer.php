@@ -30,6 +30,9 @@ abstract class Offer extends Object
 
     protected $vas;
 
+    /**
+     * @var Location
+     */
     protected $location;
 
     protected $images = [];
@@ -44,6 +47,9 @@ abstract class Offer extends Object
      */
     protected $price;
 
+    /**
+     * @var Option
+     */
     protected $area;
 
     protected $renovation;
@@ -126,14 +132,15 @@ abstract class Offer extends Object
 
     protected $internet;
 
+    /**
+     * @var Option
+     */
     protected $lotArea;
 
     protected $lotType;
 
-    protected $errors = [];
-
     /**
-     * @return mixed
+     * @return Option
      */
     public function getArea()
     {
@@ -141,15 +148,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $area
+     * @param Option $area
+     * @return $this
      */
     public function setArea(Option $area)
     {
         $this->area = $area;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return Location
      */
     public function getLocation()
     {
@@ -157,15 +166,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $location
+     * @param Location $location
+     * @return $this
      */
     public function setLocation(Location $location)
     {
         $this->location = $location;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return Price
      */
     public function getPrice()
     {
@@ -173,15 +184,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $price
+     * @param Price $price
+     * @return $this
      */
     public function setPrice(Price $price)
     {
         $this->price = $price;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCreationDate()
     {
@@ -189,15 +202,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $creationDate
+     * @param string $creationDate
+     * @return $this
      */
     public function setCreationDate($creationDate)
     {
         $this->creationDate = $creationDate;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLastUpdateDate()
     {
@@ -205,15 +220,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $lastUpdateDate
+     * @param string $lastUpdateDate
+     * @return $this
      */
     public function setLastUpdateDate($lastUpdateDate)
     {
         $this->lastUpdateDate = $lastUpdateDate;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getExpireDate()
     {
@@ -221,15 +238,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $expireDate
+     * @param string $expireDate
+     * @return $this
      */
     public function setExpireDate($expireDate)
     {
         $this->expireDate = $expireDate;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getUrl()
     {
@@ -237,15 +256,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
+     * @return $this
      */
     public function setUrl($url)
     {
         $this->url = $url;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getVas()
     {
@@ -253,7 +274,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $vas
+     * @param string $vas
      * @return $this
      */
     public function setVas($vas)
@@ -263,7 +284,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return SalesAgent
      */
     public function getSalesAgent()
     {
@@ -271,11 +292,13 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $salesAgent
+     * @param SalesAgent $salesAgent
+     * @return $this
      */
     public function setSalesAgent(SalesAgent $salesAgent)
     {
         $this->salesAgent = $salesAgent;
+        return $this;
     }
 
     /**
@@ -330,7 +353,7 @@ abstract class Offer extends Object
      */
     public function addImage($value)
     {
-        array_push($this->images, $value);
+        array_push($this->images, trim($value));
         return $this;
     }
 
@@ -361,7 +384,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWaterSupply()
     {
@@ -369,7 +392,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $waterSupply
+     * @param string $waterSupply
      * @return $this
      */
     public function setWaterSupply($waterSupply)
@@ -379,7 +402,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSewerageSupply()
     {
@@ -387,7 +410,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $sewerageSupply
+     * @param string $sewerageSupply
      * @return $this
      */
     public function setSewerageSupply($sewerageSupply)
@@ -397,7 +420,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getElectricitySupply()
     {
@@ -405,7 +428,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $electricitySupply
+     * @param string $electricitySupply
      * @return $this
      */
     public function setElectricitySupply($electricitySupply)
@@ -415,7 +438,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getElectricCapacity()
     {
@@ -423,7 +446,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $electricCapacity
+     * @param integer $electricCapacity
      * @return $this
      */
     public function setElectricCapacity($electricCapacity)
@@ -433,7 +456,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getGasSupply()
     {
@@ -441,7 +464,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $gasSupply
+     * @param string $gasSupply
      * @return $this
      */
     public function setGasSupply($gasSupply)
@@ -451,7 +474,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getHeatingSupply()
     {
@@ -459,7 +482,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $heatingSupply
+     * @param string $heatingSupply
      * @return $this
      */
     public function setHeatingSupply($heatingSupply)
@@ -469,7 +492,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRenovation()
     {
@@ -477,15 +500,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $renovation
+     * @param string $renovation
+     * @return $this
      */
     public function setRenovation($renovation)
     {
         $this->renovation = $renovation;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDescription()
     {
@@ -493,15 +518,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
+     * @return $this
      */
     public function setDescription($description)
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getRooms()
     {
@@ -509,15 +536,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $rooms
+     * @param integer $rooms
+     * @return $this
      */
     public function setRooms($rooms)
     {
         $this->rooms = $rooms;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getFloor()
     {
@@ -525,15 +554,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $floor
+     * @param integer $floor
+     * @return $this
      */
     public function setFloor($floor)
     {
         $this->floor = $floor;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWindowView()
     {
@@ -541,15 +572,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $windowView
+     * @param string $windowView
+     * @return $this
      */
     public function setWindowView($windowView)
     {
         $this->windowView = $windowView;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPhone()
     {
@@ -557,15 +590,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $phone
+     * @param string $phone
+     * @return $this
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFloorCovering()
     {
@@ -573,15 +608,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $floorCovering
+     * @param string $floorCovering
+     * @return $this
      */
     public function setFloorCovering($floorCovering)
     {
         $this->floorCovering = $floorCovering;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getFloorsTotal()
     {
@@ -589,15 +626,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $floorsTotal
+     * @param integer $floorsTotal
+     * @return $this
      */
     public function setFloorsTotal($floorsTotal)
     {
         $this->floorsTotal = $floorsTotal;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingName()
     {
@@ -605,15 +644,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $buildingName
+     * @param string $buildingName
+     * @return $this
      */
     public function setBuildingName($buildingName)
     {
         $this->buildingName = $buildingName;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getBuiltYear()
     {
@@ -621,15 +662,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $builtYear
+     * @param integer $builtYear
+     * @return $this
      */
     public function setBuiltYear($builtYear)
     {
         $this->builtYear = $builtYear;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getCeilingHeight()
     {
@@ -637,15 +680,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $ceilingHeight
+     * @param float $ceilingHeight
+     * @return $this
      */
     public function setCeilingHeight($ceilingHeight)
     {
         $this->ceilingHeight = $ceilingHeight;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getGuardedBuilding()
     {
@@ -653,15 +698,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $guardedBuilding
+     * @param string $guardedBuilding
+     * @return $this
      */
     public function setGuardedBuilding($guardedBuilding)
     {
         $this->guardedBuilding = $guardedBuilding;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLift()
     {
@@ -669,15 +716,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $lift
+     * @param string $lift
+     * @return $this
      */
     public function setLift($lift)
     {
         $this->lift = $lift;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRubbishChute()
     {
@@ -685,15 +734,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $rubbishChute
+     * @param string $rubbishChute
+     * @return $this
      */
     public function setRubbishChute($rubbishChute)
     {
         $this->rubbishChute = $rubbishChute;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getParking()
     {
@@ -701,15 +752,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $parking
+     * @param string $parking
+     * @return $this
      */
     public function setParking($parking)
     {
         $this->parking = $parking;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getIsElite()
     {
@@ -717,15 +770,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $isElite
+     * @param string $isElite
+     * @return $this
      */
     public function setIsElite($isElite)
     {
         $this->isElite = $isElite;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPmg()
     {
@@ -733,15 +788,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $pmg
+     * @param string $pmg
+     * @return $this
      */
     public function setPmg($pmg)
     {
         $this->pmg = $pmg;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getKitchen()
     {
@@ -749,15 +806,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $kitchen
+     * @param string $kitchen
+     * @return $this
      */
     public function setKitchen($kitchen)
     {
         $this->kitchen = $kitchen;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getToilet()
     {
@@ -765,15 +824,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $toilet
+     * @param string $toilet
+     * @return $this
      */
     public function setToilet($toilet)
     {
         $this->toilet = $toilet;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getShower()
     {
@@ -781,15 +842,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $shower
+     * @param string $shower
+     * @return $this
      */
     public function setShower($shower)
     {
         $this->shower = $shower;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPool()
     {
@@ -797,15 +860,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $pool
+     * @param string $pool
+     * @return $this
      */
     public function setPool($pool)
     {
         $this->pool = $pool;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSauna()
     {
@@ -813,15 +878,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $sauna
+     * @param string $sauna
+     * @return $this
      */
     public function setSauna($sauna)
     {
         $this->sauna = $sauna;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBilliard()
     {
@@ -829,15 +896,17 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $billiard
+     * @param string $billiard
+     * @return $this
      */
     public function setBilliard($billiard)
     {
         $this->billiard = $billiard;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDealStatus()
     {
@@ -845,7 +914,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $dealStatus
+     * @param string $dealStatus
      * @return $this
      */
     public function setDealStatus($dealStatus)
@@ -855,7 +924,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPayedAdv()
     {
@@ -863,7 +932,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $payedAdv
+     * @param string $payedAdv
      * @return $this
      */
     public function setPayedAdv($payedAdv)
@@ -873,7 +942,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getManuallyAdded()
     {
@@ -881,7 +950,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $manuallyAdded
+     * @param string $manuallyAdded
      * @return $this
      */
     public function setManuallyAdded($manuallyAdded)
@@ -891,7 +960,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getHaggle()
     {
@@ -899,7 +968,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $haggle
+     * @param string $haggle
      * @return $this
      */
     public function setHaggle($haggle)
@@ -909,7 +978,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getMortgage()
     {
@@ -917,7 +986,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $mortgage
+     * @param string $mortgage
      * @return $this
      */
     public function setMortgage($mortgage)
@@ -927,7 +996,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getQuality()
     {
@@ -935,7 +1004,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $quality
+     * @param string $quality
      * @return $this
      */
     public function setQuality($quality)
@@ -945,7 +1014,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getCommission()
     {
@@ -953,7 +1022,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $commission
+     * @param integer $commission
      * @return $this
      */
     public function setCommission($commission)
@@ -963,7 +1032,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getSecurityPayment()
     {
@@ -971,7 +1040,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $securityPayment
+     * @param integer $securityPayment
      * @return $this
      */
     public function setSecurityPayment($securityPayment)
@@ -981,7 +1050,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getUtilitiesIncluded()
     {
@@ -989,7 +1058,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $utilitiesIncluded
+     * @param string $utilitiesIncluded
      * @return $this
      */
     public function setUtilitiesIncluded($utilitiesIncluded)
@@ -999,7 +1068,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getElectricityIncluded()
     {
@@ -1007,7 +1076,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $electricityIncluded
+     * @param string $electricityIncluded
      * @return $this
      */
     public function setElectricityIncluded($electricityIncluded)
@@ -1017,7 +1086,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getInternet()
     {
@@ -1025,7 +1094,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $internet
+     * @param string $internet
      * @return $this
      */
     public function setInternet($internet)
@@ -1035,7 +1104,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return Option
      */
     public function getLotArea()
     {
@@ -1043,7 +1112,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $lotArea
+     * @param Option $lotArea
      * @return $this
      */
     public function setLotArea(Option $lotArea)
@@ -1053,7 +1122,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLotType()
     {
@@ -1061,7 +1130,7 @@ abstract class Offer extends Object
     }
 
     /**
-     * @param mixed $lotType
+     * @param string $lotType
      * @return $this
      */
     public function setLotType($lotType)
@@ -1095,40 +1164,50 @@ abstract class Offer extends Object
         return parent::setAttribute($attrNode);
     }
 
-    public function hasErrors()
-    {
-        return empty($this->errors);
-    }
-
-    public function getErrors()
-    {
-        return $this->errors;
-    }
-
-    public function setErrors(array $errors)
-    {
-        $this->errors = $errors;
-        return $this;
-    }
-
-    public function addError($error)
-    {
-        array_push($this->errors, $error);
-        return $this;
-    }
-
     /**
      * Validate offer
      * @return bool
      */
     public function isValid()
     {
-        if (!isset($this->type, $this->category, $this->url, $this->creationDate, $this->lastUpdateDate,
-            $this->location, $this->salesAgent, $this->price, $this->dealStatus, $this->floor,
-            $this->floorsTotal, $this->buildingName) || !$this->price->isValid() || !$this->salesAgent->isValid() ||
-            empty($this->images)) {
-            return true;
+        if (is_null($this->type)) {
+            $this->addError('Required offer field "type" is empty');
         }
-        return false;
+        if (is_null($this->category)) {
+            $this->addError('Required offer field "category" is empty');
+        }
+        if (is_null($this->url)) {
+            $this->addError('Required offer field "url" is empty');
+        }
+        if (is_null($this->creationDate)) {
+            $this->addError('Required offer field "creationDate" is empty');
+        }
+        if (is_null($this->location)) {
+            $this->addError('Required offer field "location" is empty');
+        }
+        if (is_null($this->salesAgent)) {
+            $this->addError('Required offer field "salesAgent" is empty');
+        }
+        if (is_null($this->price)) {
+            $this->addError('Required offer field "price" is empty');
+        }
+        if (is_null($this->dealStatus)) {
+            $this->addError('Required offer field "dealStatus" is empty');
+        }
+        if (is_null($this->floor)) {
+            $this->addError('Required offer field "floor" is empty');
+        }
+        if (is_null($this->floorsTotal)) {
+            $this->addError('Required offer field "floorsTotal" is empty');
+        }
+        if (is_null($this->buildingName)) {
+            $this->addError('Required offer field "buildingName" is empty');
+        }
+        if (empty($this->images)) {
+            $this->addError('Required offer field "images" is empty');
+        }
+        $this->price->isValid();
+        $this->salesAgent->isValid();
+        return $this->hasErrors();
     }
 }

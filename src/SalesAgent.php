@@ -23,7 +23,7 @@ class SalesAgent extends NestedObject
     protected $partner;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -31,7 +31,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return $this
      */
     public function setName($name)
@@ -41,7 +41,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getPhones()
     {
@@ -54,7 +54,7 @@ class SalesAgent extends NestedObject
      */
     public function addPhone($phone)
     {
-        array_push($this->phones, $phone);
+        array_push($this->phones, trim($phone));
         return $this;
     }
 
@@ -69,7 +69,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCategory()
     {
@@ -77,7 +77,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $category
+     * @param string $category
      * @return $this
      */
     public function setCategory($category)
@@ -87,7 +87,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOrganization()
     {
@@ -95,7 +95,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $organization
+     * @param string $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -105,7 +105,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAgencyId()
     {
@@ -113,7 +113,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $agencyId
+     * @param string $agencyId
      * @return $this
      */
     public function setAgencyId($agencyId)
@@ -123,7 +123,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getUrl()
     {
@@ -131,7 +131,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return $this
      */
     public function setUrl($url)
@@ -141,7 +141,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEmail()
     {
@@ -149,7 +149,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $email
+     * @param string $email
      * @return $this
      */
     public function setEmail($email)
@@ -159,7 +159,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPhoto()
     {
@@ -167,7 +167,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $photo
+     * @param string $photo
      * @return $this
      */
     public function setPhoto($photo)
@@ -177,7 +177,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPartner()
     {
@@ -185,7 +185,7 @@ class SalesAgent extends NestedObject
     }
 
     /**
-     * @param mixed $partner
+     * @param string $partner
      * @return $this
      */
     public function setPartner($partner)
@@ -194,6 +194,9 @@ class SalesAgent extends NestedObject
         return $this;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function setAttribute(array $attrNode)
     {
         if ('phone' == $attrNode['name']) {
@@ -202,14 +205,18 @@ class SalesAgent extends NestedObject
         return parent::setAttribute($attrNode);
     }
 
+    /**
+     * @return bool
+     */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->country, $this->phone)) {
-                return true;
-            }
+        parent::isValid();
+        if (is_null($this->category)) {
+             $this->addError('Required sales agent field "category" is empty');
         }
-        return $isValid;
+        if (empty($this->phones)) {
+            $this->addError('Required sales agent field "phones" is empty');
+        }
+        return $this->hasErrors();
     }
 }

@@ -33,7 +33,7 @@ class Price extends NestedObject
     protected $minRentPeriod;
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getValue()
     {
@@ -41,7 +41,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)
@@ -51,7 +51,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCurrency()
     {
@@ -59,7 +59,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $currency
+     * @param string $currency
      * @return $this
      */
     public function setCurrency($currency)
@@ -69,7 +69,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getUnit()
     {
@@ -77,7 +77,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $unit
+     * @param string $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -87,7 +87,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getNotForAgents()
     {
@@ -95,7 +95,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $notForAgents
+     * @param string $notForAgents
      * @return $this
      */
     public function setNotForAgents($notForAgents)
@@ -105,7 +105,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPrepayment()
     {
@@ -113,7 +113,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $prepayment
+     * @param string $prepayment
      * @return $this
      */
     public function setPrepayment($prepayment)
@@ -123,7 +123,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRentPledge()
     {
@@ -131,7 +131,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $rentPledge
+     * @param string $rentPledge
      * @return $this
      */
     public function setRentPledge($rentPledge)
@@ -141,7 +141,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getAgentFee()
     {
@@ -149,7 +149,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $agentFee
+     * @param float $agentFee
      * @return $this
      */
     public function setAgentFee($agentFee)
@@ -159,7 +159,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWithPets()
     {
@@ -167,7 +167,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $withPets
+     * @param string $withPets
      * @return $this
      */
     public function setWithPets($withPets)
@@ -177,7 +177,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWithChildren()
     {
@@ -185,7 +185,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $withChildren
+     * @param string $withChildren
      * @return $this
      */
     public function setWithChildren($withChildren)
@@ -195,7 +195,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCleaningIncluded()
     {
@@ -203,7 +203,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $cleaningIncluded
+     * @param string $cleaningIncluded
      * @return $this
      */
     public function setCleaningIncluded($cleaningIncluded)
@@ -213,7 +213,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTaxationForm()
     {
@@ -221,7 +221,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $taxationForm
+     * @param string $taxationForm
      * @return $this
      */
     public function setTaxationForm($taxationForm)
@@ -231,7 +231,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPeriod()
     {
@@ -239,7 +239,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $period
+     * @param string $period
      * @return $this
      */
     public function setPeriod($period)
@@ -249,7 +249,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getMinRentPeriod()
     {
@@ -257,7 +257,7 @@ class Price extends NestedObject
     }
 
     /**
-     * @param mixed $minRentPeriod
+     * @param string $minRentPeriod
      * @return $this
      */
     public function setMinRentPeriod($minRentPeriod)
@@ -271,13 +271,14 @@ class Price extends NestedObject
      */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->value, $this->currency)) {
-                return true;
-            }
+        parent::isValid();
+        if (is_null($this->value)) {
+            $this->addError('Required price field "value" is empty');
         }
-        return $isValid;
+        if (is_null($this->currency)) {
+            $this->addError('Required price field "currency" is empty');
+        }
+        return $this->hasErrors();
     }
 
 }

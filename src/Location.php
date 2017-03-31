@@ -26,12 +26,15 @@ class Location extends NestedObject
 
     protected $longitude;
 
+    /**
+     * @var Metro[]
+     */
     protected $metro = [];
 
     protected $railwayStation;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCountry()
     {
@@ -39,7 +42,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $country
+     * @param string $country
      * @return $this
      */
     public function setCountry($country)
@@ -49,7 +52,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRegion()
     {
@@ -57,7 +60,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $region
+     * @param string $region
      * @return $this
      */
     public function setRegion($region)
@@ -67,7 +70,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDistrict()
     {
@@ -75,7 +78,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $district
+     * @param string $district
      * @return $this
      */
     public function setDistrict($district)
@@ -85,7 +88,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLocalityName()
     {
@@ -93,7 +96,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $localityName
+     * @param string $localityName
      * @return $this
      */
     public function setLocalityName($localityName)
@@ -103,7 +106,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSubLocalityName()
     {
@@ -111,7 +114,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $subLocalityName
+     * @param string $subLocalityName
      * @return $this
      */
     public function setSubLocalityName($subLocalityName)
@@ -121,7 +124,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAddress()
     {
@@ -129,7 +132,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $address
+     * @param string $address
      * @return $this
      */
     public function setAddress($address)
@@ -139,7 +142,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getApartment()
     {
@@ -147,7 +150,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $apartment
+     * @param integer $apartment
      * @return $this
      */
     public function setApartment($apartment)
@@ -157,7 +160,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDirection()
     {
@@ -165,7 +168,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $direction
+     * @param string $direction
      * @return $this
      */
     public function setDirection($direction)
@@ -175,7 +178,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getDistance()
     {
@@ -183,7 +186,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $distance
+     * @param integer $distance
      * @return $this
      */
     public function setDistance($distance)
@@ -193,7 +196,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getLatitude()
     {
@@ -201,7 +204,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $latitude
+     * @param float $latitude
      * @return $this
      */
     public function setLatitude($latitude)
@@ -211,7 +214,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getLongitude()
     {
@@ -219,7 +222,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $longitude
+     * @param float $longitude
      * @return $this
      */
     public function setLongitude($longitude)
@@ -229,13 +232,17 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return Metro[]
      */
     public function getMetro()
     {
         return $this->metro;
     }
 
+    /**
+     * @param Metro $metro
+     * @return $this
+     */
     public function addMetro(Metro $metro)
     {
         array_push($this->metro, $metro);
@@ -253,7 +260,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRailwayStation()
     {
@@ -261,7 +268,7 @@ class Location extends NestedObject
     }
 
     /**
-     * @param mixed $railwayStation
+     * @param string $railwayStation
      * @return $this
      */
     public function setRailwayStation($railwayStation)
@@ -281,14 +288,15 @@ class Location extends NestedObject
         return parent::setAttribute($attrNode);
     }
 
+    /**
+     * @return bool
+     */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->country)) {
-                return true;
-            }
+        parent::isValid();
+        if (is_null($this->country)) {
+            $this->addError('Required location field "country" is empty');
         }
-        return $isValid;
+        return $this->hasErrors();
     }
 }

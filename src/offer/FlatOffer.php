@@ -3,7 +3,10 @@
 
 namespace bmwx591\yrl\offer;
 
-
+/**
+ * Class FlatOffer
+ * @package bmwx591\yrl\offer
+ */
 class FlatOffer extends BaseOffer
 {
     protected $roomsOffered;
@@ -11,7 +14,7 @@ class FlatOffer extends BaseOffer
     protected $flatAlarm;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFlatAlarm()
     {
@@ -19,7 +22,7 @@ class FlatOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $flatAlarm
+     * @param string $flatAlarm
      * @return $this
      */
     public function setFlatAlarm($flatAlarm)
@@ -29,7 +32,7 @@ class FlatOffer extends BaseOffer
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getRoomsOffered()
     {
@@ -37,7 +40,7 @@ class FlatOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $roomsOffered
+     * @param integer $roomsOffered
      * @return $this
      */
     public function setRoomsOffered($roomsOffered)
@@ -46,14 +49,18 @@ class FlatOffer extends BaseOffer
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->area, $this->studio, $this->openPlan)) {
-                return true;
-            }
+        parent::isValid();
+        if (is_null($this->studio)) {
+            $this->addError('Required offer field "studio" is empty');
         }
-        return $isValid;
+        if (is_null($this->openPlan)) {
+            $this->addError('Required offer field "openPlan" is empty');
+        }
+        return $this->hasErrors();
     }
 }

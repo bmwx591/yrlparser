@@ -1,20 +1,30 @@
 <?php
 
-
 namespace bmwx591\yrl\offer;
-
 
 use bmwx591\yrl\Option;
 
+/**
+ * Class BaseOffer
+ * @package bmwx591\yrl\offer
+ */
 class BaseOffer extends Offer
 {
-
     protected $propertyType;
 
+    /**
+     * @var Option[]
+     */
     protected $roomSpace = [];
 
+    /**
+     * @var Option
+     */
     protected $livingSpace;
 
+    /**
+     * @var Option
+     */
     protected $kitchenSpace;
 
     protected $newFlat;
@@ -78,13 +88,17 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return Option[]
      */
     public function getRoomSpace()
     {
         return $this->roomSpace;
     }
 
+    /**
+     * @param Option $roomSpace
+     * @return $this
+     */
     public function addRoomSpace(Option $roomSpace)
     {
         array_push($this->roomSpace, $roomSpace);
@@ -102,7 +116,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return Option
      */
     public function getLivingSpace()
     {
@@ -110,7 +124,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $livingSpace
+     * @param Option $livingSpace
      * @return $this
      */
     public function setLivingSpace(Option $livingSpace)
@@ -120,7 +134,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return Option
      */
     public function getKitchenSpace()
     {
@@ -128,7 +142,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $kitchenSpace
+     * @param Option $kitchenSpace
      * @return $this
      */
     public function setKitchenSpace(Option $kitchenSpace)
@@ -138,7 +152,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getNewFlat()
     {
@@ -146,7 +160,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $newFlat
+     * @param string $newFlat
      * @return $this
      */
     public function setNewFlat($newFlat)
@@ -156,7 +170,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getApartments()
     {
@@ -164,7 +178,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $apartments
+     * @param string $apartments
      * @return $this
      */
     public function setApartments($apartments)
@@ -174,7 +188,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getStudio()
     {
@@ -182,7 +196,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $studio
+     * @param string $studio
      * @return $this
      */
     public function setStudio($studio)
@@ -192,7 +206,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOpenPlan()
     {
@@ -200,7 +214,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $openPlan
+     * @param string $openPlan
      * @return $this
      */
     public function setOpenPlan($openPlan)
@@ -210,7 +224,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRoomsType()
     {
@@ -218,7 +232,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $roomsType
+     * @param string $roomsType
      * @return $this
      */
     public function setRoomsType($roomsType)
@@ -228,7 +242,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBalcony()
     {
@@ -236,7 +250,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $balcony
+     * @param string $balcony
      * @return $this
      */
     public function setBalcony($balcony)
@@ -246,7 +260,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBathroomUnit()
     {
@@ -254,7 +268,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $bathroomUnit
+     * @param string $bathroomUnit
      * @return $this
      */
     public function setBathroomUnit($bathroomUnit)
@@ -264,7 +278,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getKitchenFurniture()
     {
@@ -272,7 +286,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $kitchenFurniture
+     * @param string $kitchenFurniture
      * @return $this
      */
     public function setKitchenFurniture($kitchenFurniture)
@@ -282,7 +296,7 @@ class BaseOffer extends Offer
     }
 
     /**
-    * @return mixed
+    * @return string
     */
     public function getTelevision()
     {
@@ -290,7 +304,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $television
+     * @param string $television
      * @return $this
      */
     public function setTelevision($television)
@@ -300,7 +314,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getWashingMachine()
     {
@@ -308,7 +322,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $washingMachine
+     * @param string $washingMachine
      * @return $this
      */
     public function setWashingMachine($washingMachine)
@@ -318,7 +332,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDishwasher()
     {
@@ -326,7 +340,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $dishwasher
+     * @param string $dishwasher
      * @return $this
      */
     public function setDishwasher($dishwasher)
@@ -336,7 +350,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRefrigerator()
     {
@@ -344,15 +358,17 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $refrigerator
+     * @param string $refrigerator
+     * @return $this
      */
     public function setRefrigerator($refrigerator)
     {
         $this->refrigerator = $refrigerator;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuiltInTech()
     {
@@ -360,7 +376,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $builtInTech
+     * @param string $builtInTech
      * @return $this
      */
     public function setBuiltInTech($builtInTech)
@@ -370,7 +386,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getYandexBuildingId()
     {
@@ -378,7 +394,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $yandexBuildingId
+     * @param string $yandexBuildingId
      * @return $this
      */
     public function setYandexBuildingId($yandexBuildingId)
@@ -388,7 +404,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingType()
     {
@@ -396,7 +412,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $buildingType
+     * @param string $buildingType
      * @return $this
      */
     public function setBuildingType($buildingType)
@@ -406,7 +422,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingSeries()
     {
@@ -414,7 +430,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $buildingSeries
+     * @param string $buildingSeries
      * @return $this
      */
     public function setBuildingSeries($buildingSeries)
@@ -424,7 +440,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingPhase()
     {
@@ -432,7 +448,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $buildingPhase
+     * @param string $buildingPhase
      * @return $this
      */
     public function setBuildingPhase($buildingPhase)
@@ -442,7 +458,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingSection()
     {
@@ -450,7 +466,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $buildingSection
+     * @param string $buildingSection
      * @return $this
      */
     public function setBuildingSection($buildingSection)
@@ -460,7 +476,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getReadyQuarter()
     {
@@ -468,7 +484,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $readyQuarter
+     * @param integer $readyQuarter
      * @return $this
      */
     public function setReadyQuarter($readyQuarter)
@@ -478,7 +494,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getBuildingState()
     {
@@ -486,7 +502,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $buildingState
+     * @param string $buildingState
      * @return $this
      */
     public function setBuildingState($buildingState)
@@ -496,7 +512,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRubbishChute()
     {
@@ -504,7 +520,7 @@ class BaseOffer extends Offer
     }
 
     /**
-     * @param mixed $rubbishChute
+     * @param string $rubbishChute
      * @return $this
      */
     public function setRubbishChute($rubbishChute)
@@ -521,18 +537,15 @@ class BaseOffer extends Offer
         return in_array($this->newFlat, ['да', 'true', '1', '+']);
     }
 
-    public function isValidNewFlat()
-    {
-        return $this->isNewFlat() ?
-            isset($this->floorsTotal, $this->buildingName, $this->yandexBuildingId,
-            $this->builtYear, $this->readyQuarter, $this->buildingState) &&
-            preg_match('/^\d{4}$/', $this->builtYear) : true;
-    }
-
     public function setAttribute(array $attrNode)
     {
-        if ('room-space' == $attrNode['name']) {
+        $name = $attrNode['name'];
+        if ('room-space' == $name) {
             return $this->addRoomSpace((new Option($this))->setOptions($attrNode));
+        }
+        if (in_array($name, ['living-space', 'kitchen-space'])) {
+            $setter = 'set' . str_replace(['-', '_'], '', $name);
+            return $this->$setter((new Option($this))->setOptions($attrNode));
         }
         return parent::setAttribute($attrNode);
     }
@@ -542,13 +555,39 @@ class BaseOffer extends Offer
      */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->propertyType, $this->rooms, $this->readyQuarter, $this->buildingState) &&
-                $this->isValidNewFlat()) {
-                return true;
+        parent::isValid();
+        if (is_null($this->propertyType)) {
+            $this->addError('Required offer field "propertyType" is empty');
+        }
+        if (is_null($this->rooms)) {
+            $this->addError('Required offer field "rooms" is empty');
+        }
+        if (!($this instanceof LotOffer) && is_null($this->area)) {
+            $this->addError('Required offer field "area" is empty');
+        }
+        if ($this->isNewFlat()) {
+            if (is_null($this->floorsTotal)) {
+                $this->addError('Required offer field "floorsTotal" is empty');
+            }
+            if (is_null($this->buildingName)) {
+                $this->addError('Required offer field "buildingName" is empty');
+            }
+            if (is_null($this->yandexBuildingId)) {
+                $this->addError('Required offer field "yandexBuildingId" is empty');
+            }
+            if (is_null($this->builtYear)) {
+                $this->addError('Required offer field "builtYear" is empty');
+            }
+            if (is_null($this->readyQuarter)) {
+                $this->addError('Required offer field "readyQuarter" is empty');
+            }
+            if (is_null($this->buildingState)) {
+                $this->addError('Required offer field "buildingState" is empty');
+            }
+            if (!preg_match('/^\d{4}$/', $this->builtYear)) {
+                $this->addError('"builtYear" must be number with 4 digits');
             }
         }
-        return $isValid;
+        return $this->hasErrors();
     }
 }

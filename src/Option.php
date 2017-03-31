@@ -11,7 +11,7 @@ class Option extends NestedObject
     protected $unit;
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getValue()
     {
@@ -19,7 +19,7 @@ class Option extends NestedObject
     }
 
     /**
-     * @param mixed $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)
@@ -29,7 +29,7 @@ class Option extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getUnit()
     {
@@ -37,7 +37,7 @@ class Option extends NestedObject
     }
 
     /**
-     * @param mixed $unit
+     * @param string $unit
      * @return $this
      */
     public function setUnit($unit)

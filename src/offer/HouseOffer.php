@@ -1,15 +1,17 @@
 <?php
 
-
 namespace bmwx591\yrl\offer;
 
-
+/**
+ * Class HouseOffer
+ * @package bmwx591\yrl\offer
+ */
 class HouseOffer extends BaseOffer
 {
     protected $alarm;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAlarm()
     {
@@ -17,23 +19,12 @@ class HouseOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $alarm
+     * @param string $alarm
      * @return $this
      */
     public function setAlarm($alarm)
     {
         $this->alarm = $alarm;
         return $this;
-    }
-
-    public function isValid()
-    {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->area)) {
-                return true;
-            }
-        }
-        return $isValid;
     }
 }

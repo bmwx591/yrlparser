@@ -11,7 +11,7 @@ class Metro extends NestedObject
     protected $timeOnFoot;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -19,7 +19,7 @@ class Metro extends NestedObject
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return $this
      */
     public function setName($name)
@@ -29,7 +29,7 @@ class Metro extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getTimeOnTransport()
     {
@@ -37,7 +37,7 @@ class Metro extends NestedObject
     }
 
     /**
-     * @param mixed $timeOnTransport
+     * @param integer $timeOnTransport
      * @return $this
      */
     public function setTimeOnTransport($timeOnTransport)
@@ -47,7 +47,7 @@ class Metro extends NestedObject
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getTimeOnFoot()
     {
@@ -55,7 +55,7 @@ class Metro extends NestedObject
     }
 
     /**
-     * @param mixed $timeOnFoot
+     * @param integer $timeOnFoot
      * @return $this
      */
     public function setTimeOnFoot($timeOnFoot)

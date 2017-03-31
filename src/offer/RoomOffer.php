@@ -9,7 +9,7 @@ class RoomOffer extends BaseOffer
     protected $roomsOffered;
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getRoomsOffered()
     {
@@ -17,7 +17,7 @@ class RoomOffer extends BaseOffer
     }
 
     /**
-     * @param mixed $roomsOffered
+     * @param integer $roomsOffered
      * @return $this
      */
     public function setRoomsOffered($roomsOffered)
@@ -26,14 +26,15 @@ class RoomOffer extends BaseOffer
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function isValid()
     {
-        $isValid = parent::isValid();
-        if ($isValid) {
-            if (isset($this->roomsOffered, $this->area)) {
-                return true;
-            }
+        parent::isValid();
+        if (is_null($this->roomsOffered)) {
+            $this->addError('Required offer field "roomsOffered" is empty');
         }
-        return $isValid;
+        return $this->hasErrors();
     }
 }

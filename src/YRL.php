@@ -7,12 +7,14 @@ use bmwx591\yrl\offer\CommercialOffer;
 use bmwx591\yrl\offer\FlatOffer;
 use bmwx591\yrl\offer\GarageOffer;
 use bmwx591\yrl\offer\HouseOffer;
-use bmwx591\yrl\offer\HouseWithLotOffer;
 use bmwx591\yrl\offer\LotOffer;
 use bmwx591\yrl\offer\RoomOffer;
 
 class YRL {
 
+    /**
+     * @var \XMLReader
+     */
     protected $XMLReader;
 
     protected $uri;
@@ -32,6 +34,9 @@ class YRL {
         $this->XMLReader = new \XMLReader();
     }
 
+    /**
+     * @return \Generator
+     */
     public function getOffers()
     {
         $this->open();
@@ -193,14 +198,18 @@ class YRL {
 
     /**
      * @param string $type
-     * @return BaseOffer|CommercialOffer|FlatOffer|HouseOffer|LotOffer|RoomOffer
+     * @return BaseOffer|CommercialOffer|FlatOffer|HouseOffer|LotOffer|RoomOffer|GarageOffer
+     * @throws \Exception
      */
     protected function createOffer($type)
     {
+        $type = mb_strtolower($type);
         switch ($type) {
             case 'дом' :
             case 'house' :
             case 'часть дома' :
+            case 'дом с участком' :
+            case 'house with lot' :
                 return new HouseOffer();
             case 'квартира' :
             case 'flat' :
@@ -214,14 +223,18 @@ class YRL {
             case 'участок' :
             case 'lot' :
                 return new LotOffer();
-            case 'дом с участком' :
-            case 'house with lot' :
-                return new HouseWithLotOffer();
             case 'гараж' :
             case 'garage' :
                 return new GarageOffer();
-            default :
+            case 'дача' :
+            case 'коттедж' :
+            case 'cottage' :
+            case 'таунхаус' :
+            case 'townhouse' :
                 return new BaseOffer();
+            default :
+                throw new \Exception('Undefined offer type!');
+                break;
         }
     }
 }
