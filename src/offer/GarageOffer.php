@@ -1,9 +1,11 @@
 <?php
 
-
 namespace bmwx591\yrl\offer;
 
-
+/**
+ * Class GarageOffer
+ * @package bmwx591\yrl\offer
+ */
 class GarageOffer extends BaseOffer
 {
     protected $garageType;

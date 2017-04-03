@@ -1,6 +1,5 @@
 <?php
 
-
 namespace bmwx591\yrl\offer;
 
 /**

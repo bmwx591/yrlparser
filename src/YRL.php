@@ -10,6 +10,10 @@ use bmwx591\yrl\offer\HouseOffer;
 use bmwx591\yrl\offer\LotOffer;
 use bmwx591\yrl\offer\RoomOffer;
 
+/**
+ * Class YRL
+ * @package bmwx591\yrl
+ */
 class YRL {
 
     /**
@@ -176,9 +180,8 @@ class YRL {
                 }
             }
         }
-        $value = (trim($value)) ? $value : null;
 
-        return ['name' => $name, 'attributes' => $attributes, 'value' => $value, 'nodes' => $nodes];
+        return ['name' => $name, 'attributes' => $attributes, 'value' => trim($value), 'nodes' => $nodes];
     }
 
     /**

@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl;
 
+/**
+ * Class Location
+ * @package bmwx591\yrl
+ */
 class Location extends NestedObject
 {
     protected $country;

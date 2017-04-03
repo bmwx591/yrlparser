@@ -62,16 +62,4 @@ class ExampleTest extends \Codeception\TestCase\Test
         $offer = $offers->current();
         $this->assertEquals(null, $offer);
     }
-
-    public function testExpect()
-    {
-        $offers = $this->parser->getOffers();
-//        var_dump($offers->current());
-        $offers->next();
-        $offers->next();
-        $offers->next();
-        $offers->next();
-        var_dump($offers->current());
-        die;
-    }
 }

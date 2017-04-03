@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl;
 
+/**
+ * Class SalesAgent
+ * @package bmwx591\yrl
+ */
 class SalesAgent extends NestedObject
 {
     protected $name;

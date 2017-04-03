@@ -1,9 +1,11 @@
 <?php
 
-
 namespace bmwx591\yrl;
 
-
+/**
+ * Class Price
+ * @package bmwx591\yrl
+ */
 class Price extends NestedObject
 {
     protected $value;

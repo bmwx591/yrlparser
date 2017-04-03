@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl;
 
+/**
+ * Class Object
+ * @package bmwx591\yrl
+ */
 abstract class Object
 {
     protected $errors = [];

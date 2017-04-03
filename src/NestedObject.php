@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl;
 
+/**
+ * Class NestedObject
+ * @package bmwx591\yrl
+ */
 abstract class NestedObject extends Object
 {
 

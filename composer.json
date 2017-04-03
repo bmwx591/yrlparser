@@ -17,6 +17,9 @@
       "email": "bmw_x591@mail.ru"
     }
   ],
+  "require" : {
+    "php" : ">=5.4.0"
+  },
   "require-dev" : {
     "codeception/codeception" : "^2.2"
   },

@@ -2,6 +2,10 @@
 
 namespace bmwx591\yrl;
 
+/**
+ * Class Metro
+ * @package bmwx591\yrl
+ */
 class Metro extends NestedObject
 {
     protected $name;
