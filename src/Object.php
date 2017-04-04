@@ -86,4 +86,45 @@ abstract class Object
         }
         return $this;
     }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        $data = self::toArray($this);
+        unset($data['errors']);
+
+        return $data;
+    }
+
+    /**
+     * @param self|array $object
+     * @return array
+     */
+    public static function toArray($object)
+    {
+        $array = [];
+        foreach ($object as $key => $value) {
+            if (is_object($value) && method_exists($value, 'getData')) {
+                $array[$key] = $value->getData();
+            } elseif (is_array($value) && !empty($value)) {
+                $array[$key] = self::toArray($value);
+            } else {
+                $getter = 'get' . $key;
+                if (method_exists($object, $getter)) {
+                    $getValue = $object->$getter();
+                    if ((is_array($getValue) && !empty($getValue)) || (!is_array($getValue) && !is_null($getValue))) {
+                        $array[$key] = $getValue;
+                    }
+                }
+                elseif ($value !== null) {
+                    $array[$key] = $value;
+                }
+            }
+        }
+        return $array;
+    }
+
+
 }

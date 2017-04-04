@@ -1146,20 +1146,20 @@ abstract class Offer extends Object
     {
         $name = $attrNode['name'];
         if ('location' == $name) {
-            return $this->setLocation((new Location($this))->setOptions($attrNode));
+            return $this->setLocation((new Location())->setOptions($attrNode));
         }
         if ('sales-agent' == $name) {
-            return $this->setSalesAgent((new SalesAgent($this))->setOptions($attrNode));
+            return $this->setSalesAgent((new SalesAgent())->setOptions($attrNode));
         }
         if ('price' == $name) {
-            return $this->setPrice((new Price($this))->setOptions($attrNode));
+            return $this->setPrice((new Price())->setOptions($attrNode));
         }
         if ('image' == $name) {
             return $this->addImage($attrNode['value']);
         }
-        if (in_array($name, ['area', 'living-space', 'kitchen-space', 'lot-area'])) {
+        if (in_array($name, ['area', 'lot-area'])) {
             $setter = 'set' . str_replace(['-', '_'], '', $name);
-            return $this->$setter((new Option($this))->setOptions($attrNode));
+            return $this->$setter((new Option())->setOptions($attrNode));
         }
         return parent::setAttribute($attrNode);
     }
