@@ -217,65 +217,6 @@
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:element>
-                                    <xs:element name="prepayment" type="xs:string" />
-                                    <xs:element name="min-rent-period" type="xs:string" />
-                                    <xs:element name="rent-pledge">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="да" />
-                                                <xs:enumeration value="нет" />
-                                                <xs:enumeration value="true" />
-                                                <xs:enumeration value="false" />
-                                                <xs:enumeration value="1" />
-                                                <xs:enumeration value="0" />
-                                                <xs:enumeration value="+" />
-                                                <xs:enumeration value="-" />
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:element>
-                                    <xs:element name="agent-fee" type="xs:string" />
-                                    <xs:element name="with-pets">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="да" />
-                                                <xs:enumeration value="нет" />
-                                                <xs:enumeration value="true" />
-                                                <xs:enumeration value="false" />
-                                                <xs:enumeration value="1" />
-                                                <xs:enumeration value="0" />
-                                                <xs:enumeration value="+" />
-                                                <xs:enumeration value="-" />
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:element>
-                                    <xs:element name="with-children">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="да" />
-                                                <xs:enumeration value="нет" />
-                                                <xs:enumeration value="true" />
-                                                <xs:enumeration value="false" />
-                                                <xs:enumeration value="1" />
-                                                <xs:enumeration value="0" />
-                                                <xs:enumeration value="+" />
-                                                <xs:enumeration value="-" />
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:element>
-                                    <xs:element name="not-for-agents">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="да" />
-                                                <xs:enumeration value="нет" />
-                                                <xs:enumeration value="true" />
-                                                <xs:enumeration value="false" />
-                                                <xs:enumeration value="1" />
-                                                <xs:enumeration value="0" />
-                                                <xs:enumeration value="+" />
-                                                <xs:enumeration value="-" />
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:element>
                                     <xs:element name="period" type="xs:string" />
                                     <xs:element name="taxation-form">
                                         <xs:simpleType>
@@ -1277,6 +1218,65 @@
                         </xs:simpleType>
                     </xs:element>
                     <xs:element name="new-parking">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="да" />
+                                <xs:enumeration value="нет" />
+                                <xs:enumeration value="true" />
+                                <xs:enumeration value="false" />
+                                <xs:enumeration value="1" />
+                                <xs:enumeration value="0" />
+                                <xs:enumeration value="+" />
+                                <xs:enumeration value="-" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="prepayment" type="xs:string" />
+                    <xs:element name="min-rent-period" type="xs:string" />
+                    <xs:element name="rent-pledge">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="да" />
+                                <xs:enumeration value="нет" />
+                                <xs:enumeration value="true" />
+                                <xs:enumeration value="false" />
+                                <xs:enumeration value="1" />
+                                <xs:enumeration value="0" />
+                                <xs:enumeration value="+" />
+                                <xs:enumeration value="-" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="agent-fee" type="xs:string" />
+                    <xs:element name="with-pets">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="да" />
+                                <xs:enumeration value="нет" />
+                                <xs:enumeration value="true" />
+                                <xs:enumeration value="false" />
+                                <xs:enumeration value="1" />
+                                <xs:enumeration value="0" />
+                                <xs:enumeration value="+" />
+                                <xs:enumeration value="-" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="with-children">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="да" />
+                                <xs:enumeration value="нет" />
+                                <xs:enumeration value="true" />
+                                <xs:enumeration value="false" />
+                                <xs:enumeration value="1" />
+                                <xs:enumeration value="0" />
+                                <xs:enumeration value="+" />
+                                <xs:enumeration value="-" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="not-for-agents">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
                                 <xs:enumeration value="да" />

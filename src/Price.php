@@ -14,25 +14,9 @@ class Price extends NestedObject
 
     protected $unit;
 
-    protected $notForAgents;
-
-    protected $prepayment;
-
-    protected $rentPledge;
-
-    protected $agentFee;
-
-    protected $withPets;
-
-    protected $withChildren;
-
-    protected $cleaningIncluded;
-
     protected $taxationForm;
 
     protected $period;
-
-    protected $minRentPeriod;
 
     /**
      * @return float
@@ -91,132 +75,6 @@ class Price extends NestedObject
     /**
      * @return string
      */
-    public function getNotForAgents()
-    {
-        return $this->notForAgents;
-    }
-
-    /**
-     * @param string $notForAgents
-     * @return $this
-     */
-    public function setNotForAgents($notForAgents)
-    {
-        $this->notForAgents = $notForAgents;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPrepayment()
-    {
-        return $this->prepayment;
-    }
-
-    /**
-     * @param string $prepayment
-     * @return $this
-     */
-    public function setPrepayment($prepayment)
-    {
-        $this->prepayment = $prepayment;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRentPledge()
-    {
-        return $this->rentPledge;
-    }
-
-    /**
-     * @param string $rentPledge
-     * @return $this
-     */
-    public function setRentPledge($rentPledge)
-    {
-        $this->rentPledge = $rentPledge;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getAgentFee()
-    {
-        return $this->agentFee;
-    }
-
-    /**
-     * @param float $agentFee
-     * @return $this
-     */
-    public function setAgentFee($agentFee)
-    {
-        $this->agentFee = $agentFee;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWithPets()
-    {
-        return $this->withPets;
-    }
-
-    /**
-     * @param string $withPets
-     * @return $this
-     */
-    public function setWithPets($withPets)
-    {
-        $this->withPets = $withPets;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWithChildren()
-    {
-        return $this->withChildren;
-    }
-
-    /**
-     * @param string $withChildren
-     * @return $this
-     */
-    public function setWithChildren($withChildren)
-    {
-        $this->withChildren = $withChildren;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCleaningIncluded()
-    {
-        return $this->cleaningIncluded;
-    }
-
-    /**
-     * @param string $cleaningIncluded
-     * @return $this
-     */
-    public function setCleaningIncluded($cleaningIncluded)
-    {
-        $this->cleaningIncluded = $cleaningIncluded;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getTaxationForm()
     {
         return $this->taxationForm;
@@ -247,24 +105,6 @@ class Price extends NestedObject
     public function setPeriod($period)
     {
         $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMinRentPeriod()
-    {
-        return $this->minRentPeriod;
-    }
-
-    /**
-     * @param string $minRentPeriod
-     * @return $this
-     */
-    public function setMinRentPeriod($minRentPeriod)
-    {
-        $this->minRentPeriod = $minRentPeriod;
         return $this;
     }
 
