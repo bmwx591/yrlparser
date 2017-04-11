@@ -25,7 +25,7 @@
   },
   "autoload" : {
     "psr-4": {
-      "bmwx591\\yrl\\": ""
+      "bmwx591\\yrl\\": "src"
     }
   }
 }
