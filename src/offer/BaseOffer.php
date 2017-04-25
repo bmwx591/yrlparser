@@ -27,8 +27,6 @@ class BaseOffer extends Offer
 
     protected $roomsType;
 
-    protected $balcony;
-
     protected $bathroomUnit;
 
     protected $kitchenFurniture;
@@ -192,24 +190,6 @@ class BaseOffer extends Offer
     public function setRoomsType($roomsType)
     {
         $this->roomsType = $roomsType;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBalcony()
-    {
-        return $this->balcony;
-    }
-
-    /**
-     * @param string $balcony
-     * @return $this
-     */
-    public function setBalcony($balcony)
-    {
-        $this->balcony = $balcony;
         return $this;
     }
 

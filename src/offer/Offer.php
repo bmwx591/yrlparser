@@ -165,6 +165,8 @@ abstract class Offer extends Object
 
     protected $minRentPeriod;
 
+    protected $balcony;
+
     /**
      * @return Option
      */
@@ -1162,6 +1164,24 @@ abstract class Offer extends Object
     public function setKitchenSpace(Option $kitchenSpace)
     {
         $this->kitchenSpace = $kitchenSpace;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBalcony()
+    {
+        return $this->balcony;
+    }
+
+    /**
+     * @param string $balcony
+     * @return $this
+     */
+    public function setBalcony($balcony)
+    {
+        $this->balcony = $balcony;
         return $this;
     }
 
