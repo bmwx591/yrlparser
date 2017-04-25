@@ -135,6 +135,11 @@ abstract class Offer extends Object
     /**
      * @var Option
      */
+    protected $livingSpace;
+
+    /**
+     * @var Option
+     */
     protected $lotArea;
 
     protected $lotType;
@@ -1116,6 +1121,24 @@ abstract class Offer extends Object
     public function setInternet($internet)
     {
         $this->internet = $internet;
+        return $this;
+    }
+
+    /**
+     * @return Option
+     */
+    public function getLivingSpace()
+    {
+        return $this->livingSpace;
+    }
+
+    /**
+     * @param Option $livingSpace
+     * @return $this
+     */
+    public function setLivingSpace(Option $livingSpace)
+    {
+        $this->livingSpace = $livingSpace;
         return $this;
     }
 

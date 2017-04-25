@@ -20,11 +20,6 @@ class BaseOffer extends Offer
     /**
      * @var Option
      */
-    protected $livingSpace;
-
-    /**
-     * @var Option
-     */
     protected $kitchenSpace;
 
     protected $newFlat;
@@ -112,24 +107,6 @@ class BaseOffer extends Offer
     public function setRoomSpace(array $roomSpace)
     {
         $this->roomSpace = $roomSpace;
-        return $this;
-    }
-
-    /**
-     * @return Option
-     */
-    public function getLivingSpace()
-    {
-        return $this->livingSpace;
-    }
-
-    /**
-     * @param Option $livingSpace
-     * @return $this
-     */
-    public function setLivingSpace(Option $livingSpace)
-    {
-        $this->livingSpace = $livingSpace;
         return $this;
     }
 
