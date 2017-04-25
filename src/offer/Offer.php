@@ -140,6 +140,11 @@ abstract class Offer extends Object
     /**
      * @var Option
      */
+    protected $kitchenSpace;
+
+    /**
+     * @var Option
+     */
     protected $lotArea;
 
     protected $lotType;
@@ -1145,6 +1150,24 @@ abstract class Offer extends Object
     /**
      * @return Option
      */
+    public function getKitchenSpace()
+    {
+        return $this->kitchenSpace;
+    }
+
+    /**
+     * @param Option $kitchenSpace
+     * @return $this
+     */
+    public function setKitchenSpace(Option $kitchenSpace)
+    {
+        $this->kitchenSpace = $kitchenSpace;
+        return $this;
+    }
+
+    /**
+     * @return Option
+     */
     public function getLotArea()
     {
         return $this->lotArea;
@@ -1340,7 +1363,7 @@ abstract class Offer extends Object
         if ('image' == $name) {
             return $this->addImage($attrNode['value']);
         }
-        if (in_array($name, ['area', 'lot-area', 'living-space'])) {
+        if (in_array($name, ['area', 'lot-area', 'living-space', 'kitchen-space'])) {
             $setter = 'set' . str_replace(['-', '_'], '', $name);
             return $this->$setter((new Option())->setOptions($attrNode));
         }

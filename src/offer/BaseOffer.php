@@ -17,11 +17,6 @@ class BaseOffer extends Offer
      */
     protected $roomSpace = [];
 
-    /**
-     * @var Option
-     */
-    protected $kitchenSpace;
-
     protected $newFlat;
 
     protected $apartments;
@@ -107,24 +102,6 @@ class BaseOffer extends Offer
     public function setRoomSpace(array $roomSpace)
     {
         $this->roomSpace = $roomSpace;
-        return $this;
-    }
-
-    /**
-     * @return Option
-     */
-    public function getKitchenSpace()
-    {
-        return $this->kitchenSpace;
-    }
-
-    /**
-     * @param Option $kitchenSpace
-     * @return $this
-     */
-    public function setKitchenSpace(Option $kitchenSpace)
-    {
-        $this->kitchenSpace = $kitchenSpace;
         return $this;
     }
 
@@ -519,10 +496,6 @@ class BaseOffer extends Offer
         $name = $attrNode['name'];
         if ('room-space' == $name) {
             return $this->addRoomSpace((new Option())->setOptions($attrNode));
-        }
-        if (in_array($name, ['kitchen-space'])) {
-            $setter = 'set' . str_replace(['-', '_'], '', $name);
-            return $this->$setter((new Option())->setOptions($attrNode));
         }
         return parent::setAttribute($attrNode);
     }
