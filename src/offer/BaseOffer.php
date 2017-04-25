@@ -520,7 +520,7 @@ class BaseOffer extends Offer
         if ('room-space' == $name) {
             return $this->addRoomSpace((new Option())->setOptions($attrNode));
         }
-        if (in_array($name, ['living-space', 'kitchen-space'])) {
+        if (in_array($name, ['kitchen-space'])) {
             $setter = 'set' . str_replace(['-', '_'], '', $name);
             return $this->$setter((new Option())->setOptions($attrNode));
         }

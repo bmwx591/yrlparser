@@ -1340,7 +1340,7 @@ abstract class Offer extends Object
         if ('image' == $name) {
             return $this->addImage($attrNode['value']);
         }
-        if (in_array($name, ['area', 'lot-area'])) {
+        if (in_array($name, ['area', 'lot-area', 'living-space'])) {
             $setter = 'set' . str_replace(['-', '_'], '', $name);
             return $this->$setter((new Option())->setOptions($attrNode));
         }
