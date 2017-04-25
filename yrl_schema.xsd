@@ -196,16 +196,7 @@
                             <xs:sequence>
                                 <xs:choice minOccurs="0" maxOccurs="unbounded">
                                     <xs:element name="value" type="xs:string" />
-                                    <xs:element name="currency">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="RUR" />
-                                                <xs:enumeration value="RUB" />
-                                                <xs:enumeration value="EUR" />
-                                                <xs:enumeration value="USD" />
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:element>
+                                    <xs:element name="currency" type="xs:string" />
                                     <xs:element name="unit">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
