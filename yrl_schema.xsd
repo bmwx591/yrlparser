@@ -330,16 +330,7 @@
                     </xs:element>
                     <xs:element name="image" type="xs:string" />
                     <xs:element name="renovation" type="xs:string" />
-                    <xs:element name="quality">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="отличное" />
-                                <xs:enumeration value="хорошее" />
-                                <xs:enumeration value="нормальное" />
-                                <xs:enumeration value="плохое" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="quality" type="xs:string" />
                     <xs:element name="description" type="xs:string" />
                     <xs:element name="lot-type" type="xs:string" />
                     <xs:element name="new-flat">
