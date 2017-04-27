@@ -46,7 +46,11 @@ class YRL {
         $this->open();
         while ($this->read()) {
             if ('realty-feed/offer' == $this->path) {
-                yield $this->parseOffer();
+                try {
+                    yield $this->parseOffer();
+                } catch (\Exception $e) {
+                    continue;
+                }
             }
         }
         $this->close();
@@ -236,7 +240,7 @@ class YRL {
             case 'townhouse' :
                 return new BaseOffer();
             default :
-                throw new \Exception('Undefined offer type!');
+                throw new \InvalidArgumentException('Undefined offer type!');
                 break;
         }
     }
