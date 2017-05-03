@@ -94,34 +94,8 @@
                     <xs:element name="creation-date" type="xs:string" />
                     <xs:element name="last-update-date" type="xs:string" />
                     <xs:element name="expire-date" type="xs:string" />
-                    <xs:element name="payed-adv">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="manually-added">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="payed-adv" type="xs:string" />
+                    <xs:element name="manually-added" type="xs:string" />
                     <xs:element name="vas">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -224,62 +198,10 @@
                     <xs:element name="commission" type="xs:string" />
                     <xs:element name="security-payment" type="xs:string" />
                     <xs:element name="deal-status" type="xs:string" />
-                    <xs:element name="haggle">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="mortgage">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="utilities-included">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="electricity-included">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="haggle" type="xs:string" />
+                    <xs:element name="mortgage" type="xs:string" />
+                    <xs:element name="utilities-included" type="xs:string" />
+                    <xs:element name="electricity-included" type="xs:string" />
                     <xs:element name="area">
                         <xs:complexType>
                             <xs:sequence>
@@ -346,20 +268,7 @@
                     <xs:element name="rooms" type="xs:integer" />
                     <xs:element name="rooms-offered" type="xs:integer" />
                     <xs:element name="floor" type="xs:integer" />
-                    <xs:element name="apartments">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="apartments" type="xs:string" />
                     <xs:element name="studio">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -384,132 +293,15 @@
                     <xs:element name="window-view" type="xs:string" />
                     <xs:element name="balcony" type="xs:string" />
                     <xs:element name="bathroom-unit" type="xs:string" />
-                    <xs:element name="phone">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="internet">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="room-furniture">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="kitchen-furniture">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="television">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="washing-machine">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="dishwasher">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="refrigerator">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="built-in-tech">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="phone" type="xs:string" />
+                    <xs:element name="internet" type="xs:string" />
+                    <xs:element name="room-furniture" type="xs:string" />
+                    <xs:element name="kitchen-furniture" type="xs:string" />
+                    <xs:element name="television" type="xs:string" />
+                    <xs:element name="washing-machine" type="xs:string" />
+                    <xs:element name="dishwasher" type="xs:string" />
+                    <xs:element name="refrigerator" type="xs:string" />
+                    <xs:element name="built-in-tech" type="xs:string" />
                     <xs:element name="floor-covering">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -529,147 +321,17 @@
                         </xs:simpleType>
                     </xs:element>
                     <xs:element name="phone-lines" type="xs:string" />
-                    <xs:element name="adding-phone-on-request">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="self-selection-telecom">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="air-conditioner">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="ventilation">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="fire-alarm">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="water-supply">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="sewerage-supply">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="electricity-supply">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="adding-phone-on-request" type="xs:string" />
+                    <xs:element name="self-selection-telecom" type="xs:string" />
+                    <xs:element name="air-conditioner" type="xs:string" />
+                    <xs:element name="ventilation" type="xs:string" />
+                    <xs:element name="fire-alarm" type="xs:string" />
+                    <xs:element name="water-supply" type="xs:string" />
+                    <xs:element name="sewerage-supply" type="xs:string" />
+                    <xs:element name="electricity-supply" type="xs:string" />
                     <xs:element name="electric-capacity" type="xs:integer" />
-                    <xs:element name="gas-supply">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="heating-supply">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="gas-supply" type="xs:string" />
+                    <xs:element name="heating-supply" type="xs:string" />
                     <xs:element name="window-type">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -719,319 +381,33 @@
                         </xs:simpleType>
                     </xs:element>
                     <xs:element name="ceiling-height" type="xs:string" />
-                    <xs:element name="guarded-building">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="access-control-system">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="twenty-four-seven">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="lift">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="rubbish-chute">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="parking">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="guarded-building" type="xs:string" />
+                    <xs:element name="access-control-system" type="xs:string" />
+                    <xs:element name="twenty-four-seven" type="xs:string" />
+                    <xs:element name="lift" type="xs:string" />
+                    <xs:element name="rubbish-chute" type="xs:string" />
+                    <xs:element name="parking" type="xs:string" />
                     <xs:element name="parking-places" type="xs:integer" />
                     <xs:element name="parking-place-price" type="xs:decimal" />
-                    <xs:element name="parking-guest">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="parking-guest" type="xs:string" />
                     <xs:element name="parking-guest-places" type="xs:integer" />
-                    <xs:element name="alarm">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="flat-alarm">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="security">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="eating-facilities">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="is-elite">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="responsible-storage">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="alarm" type="xs:string" />
+                    <xs:element name="flat-alarm" type="xs:string" />
+                    <xs:element name="security" type="xs:string" />
+                    <xs:element name="eating-facilities" type="xs:string" />
+                    <xs:element name="is-elite" type="xs:string" />
+                    <xs:element name="responsible-storage" type="xs:string" />
                     <xs:element name="pallet-price" type="xs:decimal" />
-                    <xs:element name="freight-elevator">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="truck-entrance">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="ramp">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="railway">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="office-warehouse">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="open-area">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="service-three-pl">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="freight-elevator" type="xs:string" />
+                    <xs:element name="truck-entrance" type="xs:string" />
+                    <xs:element name="ramp" type="xs:string" />
+                    <xs:element name="railway" type="xs:string" />
+                    <xs:element name="office-warehouse" type="xs:string" />
+                    <xs:element name="open-area" type="xs:string" />
+                    <xs:element name="service-three-pl" type="xs:string" />
                     <xs:element name="temperature-comment" type="xs:string" />
-                    <xs:element name="pmg">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="kitchen">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="pmg" type="xs:string" />
+                    <xs:element name="kitchen" type="xs:string" />
                     <xs:element name="toilet">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -1048,48 +424,9 @@
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
-                    <xs:element name="pool">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="sauna">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="billiard">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="pool" type="xs:string" />
+                    <xs:element name="sauna" type="xs:string" />
+                    <xs:element name="billiard" type="xs:string" />
                     <xs:element name="ownership-type">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
@@ -1115,163 +452,20 @@
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
-                    <xs:element name="automatic-gates">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="cctv">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="inspection-pit">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="cellar">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="car-wash">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="auto-repair">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="new-parking">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="automatic-gates" type="xs:string" />
+                    <xs:element name="cctv" type="xs:string" />
+                    <xs:element name="inspection-pit" type="xs:string" />
+                    <xs:element name="cellar" type="xs:string" />
+                    <xs:element name="car-wash" type="xs:string" />
+                    <xs:element name="auto-repair" type="xs:string" />
+                    <xs:element name="new-parking" type="xs:string" />
                     <xs:element name="prepayment" type="xs:string" />
                     <xs:element name="min-rent-period" type="xs:string" />
-                    <xs:element name="rent-pledge">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="rent-pledge" type="xs:string" />
                     <xs:element name="agent-fee" type="xs:string" />
-                    <xs:element name="with-pets">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="with-children">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="not-for-agents">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="да" />
-                                <xs:enumeration value="нет" />
-                                <xs:enumeration value="true" />
-                                <xs:enumeration value="false" />
-                                <xs:enumeration value="1" />
-                                <xs:enumeration value="0" />
-                                <xs:enumeration value="+" />
-                                <xs:enumeration value="-" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="with-pets" type="xs:string" />
+                    <xs:element name="with-children" type="xs:string" />
+                    <xs:element name="not-for-agents" type="xs:string" />
                 </xs:choice>
             </xs:sequence>
             <xs:attribute name="internal-id" type="xs:string" use="required" />
