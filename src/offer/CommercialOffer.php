@@ -20,8 +20,6 @@ class CommercialOffer extends Offer
 
     protected $manuallyAdded;
 
-    protected $roomFurniture;
-
     protected $entranceType;
 
     protected $phoneLines;
@@ -183,24 +181,6 @@ class CommercialOffer extends Offer
     public function setCadastralNumber($cadastralNumber)
     {
         $this->cadastralNumber = $cadastralNumber;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRoomFurniture()
-    {
-        return $this->roomFurniture;
-    }
-
-    /**
-     * @param string $roomFurniture
-     * @return $this
-     */
-    public function setRoomFurniture($roomFurniture)
-    {
-        $this->roomFurniture = $roomFurniture;
         return $this;
     }
 

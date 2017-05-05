@@ -167,6 +167,8 @@ abstract class Offer extends Object
 
     protected $balcony;
 
+    protected $roomFurniture;
+
     /**
      * @return Option
      */
@@ -1362,6 +1364,24 @@ abstract class Offer extends Object
     public function setMinRentPeriod($minRentPeriod)
     {
         $this->minRentPeriod = $minRentPeriod;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRoomFurniture()
+    {
+        return $this->roomFurniture;
+    }
+
+    /**
+     * @param string $roomFurniture
+     * @return $this
+     */
+    public function setRoomFurniture($roomFurniture)
+    {
+        $this->roomFurniture = $roomFurniture;
         return $this;
     }
 
