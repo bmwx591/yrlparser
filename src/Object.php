@@ -69,7 +69,9 @@ abstract class Object
     public function setAttribute(array $attrNode)
     {
         $setter = 'set' . str_replace(['-', '_'], '', $attrNode['name']);
-        $this->$setter($attrNode['value']);
+        if (method_exists($this, $setter)) {
+            $this->$setter($attrNode['value']);
+        }
         return $this;
     }
 

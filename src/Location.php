@@ -37,6 +37,8 @@ class Location extends NestedObject
 
     protected $railwayStation;
 
+    protected $nonAdminSubLocality;
+
     /**
      * @return string
      */
@@ -278,6 +280,24 @@ class Location extends NestedObject
     public function setRailwayStation($railwayStation)
     {
         $this->railwayStation = $railwayStation;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNonAdminSubLocality()
+    {
+        return $this->nonAdminSubLocality;
+    }
+
+    /**
+     * @param string $nonAdminSubLocality
+     * @return $this
+     */
+    public function setNonAdminSubLocality($nonAdminSubLocality)
+    {
+        $this->nonAdminSubLocality = $nonAdminSubLocality;
         return $this;
     }
 
