@@ -17,7 +17,7 @@ class Option extends NestedObject
      */
     public function getValue()
     {
-        return $this->value;
+        return (float) str_replace(',', '.', $this->value);
     }
 
     /**
