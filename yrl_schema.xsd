@@ -175,7 +175,9 @@
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
                                                 <xs:enumeration value="кв. м" />
+                                                <xs:enumeration value="кв.м" />
                                                 <xs:enumeration value="sq. m" />
+                                                <xs:enumeration value="sq.m" />
                                                 <xs:enumeration value="cотка" />
                                                 <xs:enumeration value="гектар" />
                                                 <xs:enumeration value="hectare" />
