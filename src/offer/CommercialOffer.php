@@ -669,4 +669,12 @@ class CommercialOffer extends Offer
         $this->temperatureComment = $temperatureComment;
         return $this;
     }
+
+    public function isValid()
+    {
+        if (is_null($this->commercialType)) {
+            $this->addError('Required offer field "commercial-type" is empty');
+        }
+        return parent::isValid();
+    }
 }
