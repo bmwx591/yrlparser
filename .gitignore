@@ -3,3 +3,5 @@
 composer.phar
 composer.lock
 codecept.phar
+# netbeans project files
+nbproject
