@@ -3,10 +3,10 @@
 namespace bmwx591\yrl;
 
 /**
- * Class Object
+ * Class BaseObject
  * @package bmwx591\yrl
  */
-abstract class Object
+abstract class BaseObject
 {
     protected $errors = [];
 

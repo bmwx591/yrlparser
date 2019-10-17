@@ -2,7 +2,7 @@
 
 namespace bmwx591\yrl\offer;
 
-use bmwx591\yrl\Object;
+use bmwx591\yrl\BaseObject;
 use bmwx591\yrl\Location;
 use bmwx591\yrl\Option;
 use bmwx591\yrl\Price;
@@ -12,7 +12,7 @@ use bmwx591\yrl\SalesAgent;
  * Class Offer
  * @package bmwx591\yrl\offer
  */
-abstract class Offer extends Object
+abstract class Offer extends BaseObject
 {
     protected $internalId;
 
