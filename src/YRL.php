@@ -258,7 +258,7 @@ class YRL {
             case 'townhouse' :
                 return new BaseOffer();
             default :
-                throw new \InvalidArgumentException(sprintf('Undefined offer type - "%s"!', $type));
+                throw new \InvalidArgumentException('Undefined offer type - "'. $type. '"!');
                 break;
         }
     }
