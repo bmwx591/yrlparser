@@ -29,6 +29,8 @@ class YRL {
 
     protected $offersCount;
 
+    protected $errors = [];
+
     protected $pathArr = [];
 
     protected $path;
@@ -49,6 +51,7 @@ class YRL {
                 try {
                     yield $this->parseOffer();
                 } catch (\Exception $e) {
+                    $this->errors[] = $e->getMessage();
                     continue;
                 }
             }
@@ -62,6 +65,11 @@ class YRL {
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function getErrors()
+    {
+        return $this->errors;
     }
 
     /**
@@ -160,7 +168,17 @@ class YRL {
         $category = array_values(array_filter($offerNode['nodes'], function($item) {
             return 'category' == $item['name'];
         }));
-        return $this->createOffer($category[0]['value'])->setOptions($offerNode);
+        try {
+            $offer = $this->createOffer($category[0]['value'])->setOptions($offerNode);
+        } catch (\InvalidArgumentException $ex) {
+            if (isset($offerNode['attributes']['internal-id'])) {
+                throw new \InvalidArgumentException(
+                    sprintf('Offer internal-id = %s, error: %s',
+                        $offerNode['attributes']['internal-id'],
+                        $ex->getMessage()));
+            }
+        }
+        return $offer;
     }
 
     protected function parseNode($basePath)
@@ -240,7 +258,7 @@ class YRL {
             case 'townhouse' :
                 return new BaseOffer();
             default :
-                throw new \InvalidArgumentException('Undefined offer type!');
+                throw new \InvalidArgumentException('Undefined offer type - "'. $type. '"!');
                 break;
         }
     }
