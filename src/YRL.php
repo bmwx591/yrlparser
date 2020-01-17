@@ -169,7 +169,7 @@ class YRL {
             return 'category' == $item['name'];
         }));
         try {
-            $offer = $this->createOffer($category[0]['value'])->setOptions($offerNode);
+            $offer = $this->createOffer($category[0]['value'] ?? '')->setOptions($offerNode);
         } catch (\InvalidArgumentException $ex) {
             if (isset($offerNode['attributes']['internal-id'])) {
                 throw new \InvalidArgumentException(
